@@ -121,6 +121,7 @@
         width: 100%;
         height: 1000px;
         overflow: auto;
+        margin-top: 40px;
       }
 
       .courseParts li{
@@ -161,7 +162,7 @@
 
     <div class="goTop"><a href="#navigation"><h1>&#8593</h1></a></div>
 
-    <section class="course">
+    <!-- <section class="course">
       <h1>heading 1</h1>
       <div class="courseParts">
         <h2>heading 2</h2>
@@ -172,7 +173,7 @@
           <li><video src="https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN" controls></video></li>
         </ol>
       </div>
-    </section>
+    </section> -->
   <!-- =====================html section end========================= -->
 
   <!-- ==================================================================================================================== -->
@@ -182,118 +183,122 @@
 
     const body = document.body;
     const navigation = document.querySelector(".navigation");
-    console.log(navigation);
 
     // navigation links start
-    const courseNames = ['TypeScript', 'Angular','C Sharp', 'SQL', 'DSA', 'Docker'];
+    const courseNames = ['TypeScript', 'Angular','C_Sharp', 'SQL', 'DSA', 'Docker'];
 
       for(courseName of courseNames){
+        // navlink start
         const navLink = document.createElement('a');
         navLink.innerText = courseName;
         navLink.setAttribute("href", `#${courseName}`)
         navigation.append(navLink);
 
-
+        // course section start
         const section = document.createElement('section');
         const h1 = document.createElement('h1');
-        const h2 = document.createElement('h2');
-        const videoContainer = document.createElement('div');
-
-        videoContainer.setAttribute("class", "courseParts");
-        h2.innerText = "heading 2";
-        videoContainer.append(h2);
 
         h1.innerText = courseName;
         section.setAttribute("class","course");
         section.setAttribute("id",`${courseName}`);
         section.append(h1);
-        section.append(videoContainer);
         body.append(section);
       }
 
+      const typeScript = document.querySelector("#TypeScript");
+      const typeScriptHeadings = ['Welcome (2m)', 'Getting Started with TypeScript (20m)', 'Fundamentals (25m)', 'Advanced Types (26m)'];
+      const typeScriptVideoLinks = [
+        [`https://cdn.fs.teachablecdn.com/sRUUDOXvToyMWDvM4Y5c
+          https://cdn.fs.teachablecdn.com/zznHMIFTbiB61erhgZwQ
+          https://cdn.fs.teachablecdn.com/T15EsXIcRGOsLVPyqZ5N`],
+        [`https://cdn.fs.teachablecdn.com/OrNSeO8lQoC5pBXxMzLz
+          https://cdn.fs.teachablecdn.com/9oxpmoXgR6ezL17yczq8
+          https://cdn.fs.teachablecdn.com/pIsg5Hd4RijOz5g07Qqm
+          https://cdn.fs.teachablecdn.com/VqArUcIdR6qwMM5LFISt
+          https://cdn.fs.teachablecdn.com/WGjVz3t3S28ZxbLJnW0S
+          https://cdn.fs.teachablecdn.com/ha1sZGcZRrO1q1I6N4Iz`],
+        [`https://cdn.fs.teachablecdn.com/NJ4pbtIURuq2rd8LSqLm
+          https://cdn.fs.teachablecdn.com/4nluWCZTGWUkINg0iPWV
+          https://cdn.fs.teachablecdn.com/hTNji4IxSGB02kcqk09I
+          https://cdn.fs.teachablecdn.com/OeevNNRqS2O1bji3jgo0
+          https://cdn.fs.teachablecdn.com/Aulw3XiOQVWDKgOU1i1C
+          https://cdn.fs.teachablecdn.com/VtxorKn0SFu1q6cv1y45
+          https://cdn.fs.teachablecdn.com/q5cIoxFzSzKD975pBTsg
+          https://cdn.fs.teachablecdn.com/XvEDHTKmSUuH6VQhH4dh
+          https://cdn.fs.teachablecdn.com/pa1tDGXQpuoQqOoFBOkY`],
+        [`https://cdn.fs.teachablecdn.com/RJ4Pfr3NROCObaZ236v6
+          https://cdn.fs.teachablecdn.com/xUPIBEebS2W3rimefBc6
+          https://cdn.fs.teachablecdn.com/4lo9HjpiSUKmGd56AWmg
+          https://cdn.fs.teachablecdn.com/qP54MAxTnuTY1HYudDbP
+          https://cdn.fs.teachablecdn.com/Q9ElrfkZQHnfuNY9hEHl
+          https://cdn.fs.teachablecdn.com/3ygna1tQR9CN4uRadCMg
+          https://cdn.fs.teachablecdn.com/mr4qrXmYQi6ghOWdXutp
+          https://cdn.fs.teachablecdn.com/HdBzU3ZWR4KjJTDaz60G
+          https://cdn.fs.teachablecdn.com/BMUY2NPuQ6aognJyfDBS
+          https://cdn.fs.teachablecdn.com/Oq90oRhrTK2kjKxCX8yH
+          https://cdn.fs.teachablecdn.com/ra87B6d4SmKnZu1OUReA`]];
+
+      // for(let courseSectionHeading of courseSectionHeadings){
+      //   const h2 = document.createElement('h2');
+      //   const videoContainer = document.createElement('div');
+      //   videoContainer.setAttribute("class", "courseParts");
+      //   h2.innerText = courseSectionHeading;
+      //   videoContainer.append(h2);
+      //   typeScript.append(videoContainer);
+      // }
+
+      function videoHolders(courseName, courseHeadings){
+        for(let courseHeading of courseHeadings){
+        const h2 = document.createElement('h2');
+        const videoContainer = document.createElement('div');
+        videoContainer.setAttribute("class", "courseParts");
+        h2.innerText = courseHeading;
+        videoContainer.append(h2);
+        typeScript.append(videoContainer);
+      }
+      }
+
+      videoHolders(typeScript, typeScriptHeadings);
+
+      const videoHolder = document.querySelectorAll(".courseParts");
+
+      // function addVideos(arrayLinks){
+      //   for(let i = 0; i<=typeScriptVideoLinks.length; i++){
+      //     for(let arrayLink of arrayLinks[i]){
+      //       const ol = document.createElement('ol');
+      //       const li = document.createElement('li');
+      //       const video = document.createElement('video');
+      //       const videohold = videoHolder[i];
+      //       video.setAttribute("src", `${i}`);
+      //       li.append(video);
+      //       ol.append(li);
+      //       videohold.append(ol);
+      //     console.log(arrayLink)
+      //     console.log(videoHolder[i])
+      //   }
+      //   }
+      // }
+
+      function addVideos(arrayLinks){
+        for(let i = 0; i<=typeScriptVideoLinks.length; i++){
+          for(let arrayLink of arrayLinks[i]){
+            const ol = document.createElement('ol');
+            for(let i = 0; i<= 3;i++){
+              const li = document.createElement('li');
+              const video = document.createElement('video');
+              video.setAttribute("src", `${i}`);
+              li.append(video);
+              ol.append(li);
+            }
+          console.log(arrayLink)
+          console.log(videoHolder[i])
+        }
+        }
+      }
+
+      addVideos(typeScriptVideoLinks);
+
       // navigation links end
-
-
-
-//       const category = ['The Big O Notation (16 m)', 'Arrays (30 m)'];
-
-//       const videocategory = {
-//         linkSet1: `https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN
-// https://cdn.fs.teachablecdn.com/xg9GxOKaS2CgP1miKpmX
-// https://cdn.fs.teachablecdn.com/fWO9ymnlQ7uDT4K9s5Ia
-// https://cdn.fs.teachablecdn.com/RF7hTREHQTuj0rF9wQeg
-// https://cdn.fs.teachablecdn.com/VgZ6YKzSQ3aSigduN78q
-// https://cdn.fs.teachablecdn.com/LIOshrFR7OOUYfMXI5D3
-// https://cdn.fs.teachablecdn.com/R9tUqYo0TSa1MVYzNf12
-// https://cdn.fs.teachablecdn.com/DC6vhfyWSr625KQPNTsr`,
-
-//         linkSet2: `https://cdn.fs.teachablecdn.com/WJrLWIh5TS2Jb2PtzMMZ
-// https://cdn.fs.teachablecdn.com/YekxiRODRkWIxkVTivTF
-// https://cdn.fs.teachablecdn.com/bZhhKsn6QmKeQqXQHz9b
-// https://cdn.fs.teachablecdn.com/3q0Oqrf3QJeTR00lp1Gx
-// https://cdn.fs.teachablecdn.com/xXUZupSQiRcVYXLvc4xg
-// https://cdn.fs.teachablecdn.com/cjIvN1LoQAWSdSsZWcSd
-// https://cdn.fs.teachablecdn.com/lEBHmobPREmnnkOXQGlH
-// https://cdn.fs.teachablecdn.com/WaQASRESSW5fiMKy2gVV
-// https://cdn.fs.teachablecdn.com/MaCaiVOGSBauDifggtny
-// https://cdn.fs.teachablecdn.com/iCB1dhmgTQyzbUprNR3p
-// https://cdn.fs.teachablecdn.com/fwck8BHbTlW7nP90SJu0
-// https://cdn.fs.teachablecdn.com/8904CKPjSSGtRZZbje5z
-// https://cdn.fs.teachablecdn.com/NEXxfO4USOWGff7m51vD
-// https://cdn.fs.teachablecdn.com/t4BcQLfhQymbgdvkzH1S
-// https://cdn.fs.teachablecdn.com/jHnQIsPTS3ubQQzrha8y
-// https://cdn.fs.teachablecdn.com/fBkbAWZTTsqxy5fMhIsk
-// https://cdn.fs.teachablecdn.com/T9UOhjidSlOGBBQse98L
-// https://cdn.fs.teachablecdn.com/9v6qdTgmTdydjpqNOP6M`,
-//       };
-//       const body = document.body;
-
-//       for(let i = 0; i <= category.length - 1; i++){
-//         const section = document.createElement("section");
-//         section.setAttribute("class", "VideoContainer");
-
-//         const h2 = document.createElement("h2");
-//         h2.textContent = category[i];
-
-//         section.append(h2);
-
-//         const ol = document.createElement("ol");
-//         ol.setAttribute("class", "videoList");
-//         ol.setAttribute("id", `videoList${i + 1}`);
-//         let idList = ol.getAttribute("id");
-
-//         section.append(ol);
-
-//         body.append(section);
-//       }
-
-//       for(let i = 0; i<= category.length - 1; i++){
-//         const objectArray = Object.entries(videocategory);
-//         const obArray = (objectArray[i]);
-//         for(let num =0 ; num<= objectArray.length - 1; num++){
-//           console.log(obArray[num]);
-//         }
-        
-//       }
-
-
-//       for(let i = 0; i<= category.length - 1; i++){
-//         const linksArray = videocategory.linkSet1.split("\n");
-
-//         const videoList = document.querySelector(`#videoList${i + 1}`);
-
-//           for (link of linksArray) {
-//         const video = document.createElement("video");
-//         video.setAttribute("src", link);
-//         video.setAttribute("controls", "auto");
-//         video.setAttribute("preload", "none");
-//         video.classList = "video";
-
-//         const videoLi = document.createElement("li");
-//         videoLi.append(video);
-//         videoList.append(videoLi);
-//       }
-//       }
 
     </script>
   </body>
