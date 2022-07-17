@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:32,height:32/https://www.filepicker.io/api/file/9OxlMI8TjGM2W6ELElMd" type="image/x-icon">
     <!-- <link rel="stylesheet" href="style2.css" /> -->
     <!-- <script src="./JavaScript/moshVideos.js" defer></script> -->
     <style>
@@ -14,6 +15,7 @@
         margin: 0;
         padding: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        scroll-behavior: smooth;
       }
 
       ::-webkit-scrollbar {
@@ -34,158 +36,265 @@
         background: red;
       }
 
+      html{
+        font-size: 62.5%;
+      }
+
       body {
         background-color: rgb(24, 0, 56);
-        width: 100%;
-        padding: 20px;
+        max-width: 100vw;
+        overflow-x: hidden;
+        color: white;
         /* display: flex; */
         /* justify-self: space; */
       }
 
+      h1{
+        color: white;
+        font-size: 4rem;
+        margin: 20px 0;
+      }
+
       h2 {
         color: white;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
       }
 
-      .VideoContainer {
-        max-width: 600px;
-        margin: 30px auto;
-        padding: 20px;
-        height: 800px;
-        overflow-y: auto;
-        overflow-x: hidden;
+      li{
+        font-size: 2rem;
+      }
+
+      a{
+        color: rgb(255, 0, 123);
+        font-size: 2rem;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-weight: 500;
+        letter-spacing: .1ch;
+      }
+
+      a:hover, a:focus{
+        color: white;
+        background-color:  rgb(255, 0, 123);
+        border-radius: 10px;
+      }
+
+      .goTop{
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 15px;
-        background-color: rgb(36, 9, 72);
-        border-radius: 6px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        z-index: 10;
+        border-radius: 50%;
       }
 
-      .videoList {
+      .navigation{
+        padding: 20px;
         width: 100%;
-        list-style-type: decimal;
-        color: rgba(255, 255, 255, 0.356);
-        font-size: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.35);
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
       }
 
-      .videoList li {
+      .navigation a{
+        /* text-decoration: none; */
+      }
+
+      .course{
+        text-align: center;
+        width: 90%;
+        margin: 40px auto;
+        background-color: rgba(0, 0, 0, 0.398);
+      }
+
+      .courseParts{
+        background-color: rgba(0, 0, 0, 0.391);
+        padding: 20px;
+        width: 100%;
+        height: 1000px;
+        overflow: auto;
+      }
+
+      .courseParts li{
         list-style-position: inside;
-        margin-top: 30px;
-        border-top: 2px solid rgba(255, 255, 255, 0.144);
+        margin-bottom: 20px;
+        text-align: left;
       }
 
-      .videoList li::before {
+      .courseParts li::before{
         content: "video";
       }
 
-      .video {
+      @media screen and (min-width:700px) {
+        .course{
+          width: 80%;
+        }
+      }
+
+      @media screen and (min-width:900px) {
+        .course{
+          max-width: 700px;
+        }
+      }
+
+      video {
         width: 100%;
       }
     </style>
-    <title>Coding</title>
+    <title>Mosh Courses</title>
   </head>
 
-  <!-- =====================html section========================= -->
+  <!-- ===================== html section start ========================= -->
   <body>
-    <!-- <section class="VideoContainer">
-      <h2>The Big O Notation (16 m)</h2>
-      <ul class="videoList" id="videoList"></ul>
-    </section> -->
+    <!-- navigation start -->
+    <nav class="navigation" id="navigation">
+    </nav>
+    <!-- navigation end -->
+
+    <div class="goTop"><a href="#navigation"><h1>&#8593</h1></a></div>
+
+    <section class="course">
+      <h1>heading 1</h1>
+      <div class="courseParts">
+        <h2>heading 2</h2>
+        <ol>
+          <li><video src="https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN" controls></video></li>
+          <li><video src="https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN" controls></video></li>
+          <li><video src="https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN" controls></video></li>
+          <li><video src="https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN" controls></video></li>
+        </ol>
+      </div>
+    </section>
+  <!-- =====================html section end========================= -->
+
+  <!-- ==================================================================================================================== -->
 
     <!-- =======================script section================== -->
     <script>
 
-      const category = ['The Big O Notation (16 m)', 'Arrays (30 m)'];
+    const body = document.body;
+    const navigation = document.querySelector(".navigation");
+    console.log(navigation);
 
-      const videocategory = {
-        linkSet1: `https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN
-https://cdn.fs.teachablecdn.com/xg9GxOKaS2CgP1miKpmX
-https://cdn.fs.teachablecdn.com/fWO9ymnlQ7uDT4K9s5Ia
-https://cdn.fs.teachablecdn.com/RF7hTREHQTuj0rF9wQeg
-https://cdn.fs.teachablecdn.com/VgZ6YKzSQ3aSigduN78q
-https://cdn.fs.teachablecdn.com/LIOshrFR7OOUYfMXI5D3
-https://cdn.fs.teachablecdn.com/R9tUqYo0TSa1MVYzNf12
-https://cdn.fs.teachablecdn.com/DC6vhfyWSr625KQPNTsr`,
+    // navigation links start
+    const courseNames = ['TypeScript', 'Angular','C Sharp', 'SQL', 'DSA', 'Docker'];
 
-        linkSet2: `https://cdn.fs.teachablecdn.com/WJrLWIh5TS2Jb2PtzMMZ
-https://cdn.fs.teachablecdn.com/YekxiRODRkWIxkVTivTF
-https://cdn.fs.teachablecdn.com/bZhhKsn6QmKeQqXQHz9b
-https://cdn.fs.teachablecdn.com/3q0Oqrf3QJeTR00lp1Gx
-https://cdn.fs.teachablecdn.com/xXUZupSQiRcVYXLvc4xg
-https://cdn.fs.teachablecdn.com/cjIvN1LoQAWSdSsZWcSd
-https://cdn.fs.teachablecdn.com/lEBHmobPREmnnkOXQGlH
-https://cdn.fs.teachablecdn.com/WaQASRESSW5fiMKy2gVV
-https://cdn.fs.teachablecdn.com/MaCaiVOGSBauDifggtny
-https://cdn.fs.teachablecdn.com/iCB1dhmgTQyzbUprNR3p
-https://cdn.fs.teachablecdn.com/fwck8BHbTlW7nP90SJu0
-https://cdn.fs.teachablecdn.com/8904CKPjSSGtRZZbje5z
-https://cdn.fs.teachablecdn.com/NEXxfO4USOWGff7m51vD
-https://cdn.fs.teachablecdn.com/t4BcQLfhQymbgdvkzH1S
-https://cdn.fs.teachablecdn.com/jHnQIsPTS3ubQQzrha8y
-https://cdn.fs.teachablecdn.com/fBkbAWZTTsqxy5fMhIsk
-https://cdn.fs.teachablecdn.com/T9UOhjidSlOGBBQse98L
-https://cdn.fs.teachablecdn.com/9v6qdTgmTdydjpqNOP6M`,
-      };
-      const body = document.body;
+      for(courseName of courseNames){
+        const navLink = document.createElement('a');
+        navLink.innerText = courseName;
+        navLink.setAttribute("href", `#${courseName}`)
+        navigation.append(navLink);
 
-      for(let i = 0; i <= category.length - 1; i++){
-        const section = document.createElement("section");
-        section.setAttribute("class", "VideoContainer");
 
-        const h2 = document.createElement("h2");
-        h2.textContent = category[i];
+        const section = document.createElement('section');
+        const h1 = document.createElement('h1');
+        const h2 = document.createElement('h2');
+        const videoContainer = document.createElement('div');
 
-        section.append(h2);
+        videoContainer.setAttribute("class", "courseParts");
+        h2.innerText = "heading 2";
+        videoContainer.append(h2);
 
-        const ol = document.createElement("ol");
-        ol.setAttribute("class", "videoList");
-        ol.setAttribute("id", `videoList${i + 1}`);
-        let idList = ol.getAttribute("id");
-
-        section.append(ol);
-
+        h1.innerText = courseName;
+        section.setAttribute("class","course");
+        section.setAttribute("id",`${courseName}`);
+        section.append(h1);
+        section.append(videoContainer);
         body.append(section);
       }
 
-      for(let i = 0; i<= category.length - 1; i++){
-        const objectArray = Object.entries(videocategory);
-        const obArray = (objectArray[i]);
-        for(let num =0 ; num<= objectArray.length - 1; num++){
-          console.log(obArray[num]);
-        }
+      // navigation links end
+
+
+
+//       const category = ['The Big O Notation (16 m)', 'Arrays (30 m)'];
+
+//       const videocategory = {
+//         linkSet1: `https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN
+// https://cdn.fs.teachablecdn.com/xg9GxOKaS2CgP1miKpmX
+// https://cdn.fs.teachablecdn.com/fWO9ymnlQ7uDT4K9s5Ia
+// https://cdn.fs.teachablecdn.com/RF7hTREHQTuj0rF9wQeg
+// https://cdn.fs.teachablecdn.com/VgZ6YKzSQ3aSigduN78q
+// https://cdn.fs.teachablecdn.com/LIOshrFR7OOUYfMXI5D3
+// https://cdn.fs.teachablecdn.com/R9tUqYo0TSa1MVYzNf12
+// https://cdn.fs.teachablecdn.com/DC6vhfyWSr625KQPNTsr`,
+
+//         linkSet2: `https://cdn.fs.teachablecdn.com/WJrLWIh5TS2Jb2PtzMMZ
+// https://cdn.fs.teachablecdn.com/YekxiRODRkWIxkVTivTF
+// https://cdn.fs.teachablecdn.com/bZhhKsn6QmKeQqXQHz9b
+// https://cdn.fs.teachablecdn.com/3q0Oqrf3QJeTR00lp1Gx
+// https://cdn.fs.teachablecdn.com/xXUZupSQiRcVYXLvc4xg
+// https://cdn.fs.teachablecdn.com/cjIvN1LoQAWSdSsZWcSd
+// https://cdn.fs.teachablecdn.com/lEBHmobPREmnnkOXQGlH
+// https://cdn.fs.teachablecdn.com/WaQASRESSW5fiMKy2gVV
+// https://cdn.fs.teachablecdn.com/MaCaiVOGSBauDifggtny
+// https://cdn.fs.teachablecdn.com/iCB1dhmgTQyzbUprNR3p
+// https://cdn.fs.teachablecdn.com/fwck8BHbTlW7nP90SJu0
+// https://cdn.fs.teachablecdn.com/8904CKPjSSGtRZZbje5z
+// https://cdn.fs.teachablecdn.com/NEXxfO4USOWGff7m51vD
+// https://cdn.fs.teachablecdn.com/t4BcQLfhQymbgdvkzH1S
+// https://cdn.fs.teachablecdn.com/jHnQIsPTS3ubQQzrha8y
+// https://cdn.fs.teachablecdn.com/fBkbAWZTTsqxy5fMhIsk
+// https://cdn.fs.teachablecdn.com/T9UOhjidSlOGBBQse98L
+// https://cdn.fs.teachablecdn.com/9v6qdTgmTdydjpqNOP6M`,
+//       };
+//       const body = document.body;
+
+//       for(let i = 0; i <= category.length - 1; i++){
+//         const section = document.createElement("section");
+//         section.setAttribute("class", "VideoContainer");
+
+//         const h2 = document.createElement("h2");
+//         h2.textContent = category[i];
+
+//         section.append(h2);
+
+//         const ol = document.createElement("ol");
+//         ol.setAttribute("class", "videoList");
+//         ol.setAttribute("id", `videoList${i + 1}`);
+//         let idList = ol.getAttribute("id");
+
+//         section.append(ol);
+
+//         body.append(section);
+//       }
+
+//       for(let i = 0; i<= category.length - 1; i++){
+//         const objectArray = Object.entries(videocategory);
+//         const obArray = (objectArray[i]);
+//         for(let num =0 ; num<= objectArray.length - 1; num++){
+//           console.log(obArray[num]);
+//         }
         
-      }
+//       }
 
 
-      for(let i = 0; i<= category.length - 1; i++){
-        const linksArray = videocategory.linkSet1.split("\n");
+//       for(let i = 0; i<= category.length - 1; i++){
+//         const linksArray = videocategory.linkSet1.split("\n");
 
-        const videoList = document.querySelector(`#videoList${i + 1}`);
+//         const videoList = document.querySelector(`#videoList${i + 1}`);
 
-          for (link of linksArray) {
-        const video = document.createElement("video");
-        video.setAttribute("src", link);
-        video.setAttribute("controls", "auto");
-        video.setAttribute("preload", "none");
-        video.classList = "video";
+//           for (link of linksArray) {
+//         const video = document.createElement("video");
+//         video.setAttribute("src", link);
+//         video.setAttribute("controls", "auto");
+//         video.setAttribute("preload", "none");
+//         video.classList = "video";
 
-        const videoLi = document.createElement("li");
-        videoLi.append(video);
-        videoList.append(videoLi);
-      }
-      }
+//         const videoLi = document.createElement("li");
+//         videoLi.append(video);
+//         videoList.append(videoLi);
+//       }
+//       }
 
-      // for (link of linksList) {
-      //   const video = document.createElement("video");
-      //   video.setAttribute("src", link);
-      //   video.setAttribute("controls", "auto");
-      //   video.setAttribute("preload", "none");
-      //   video.classList = "video";
-
-      //   const videoLi = document.createElement("li");
-      //   videoLi.append(video);
-      //   videoList.append(videoLi);
-      // }
     </script>
   </body>
 </html>
