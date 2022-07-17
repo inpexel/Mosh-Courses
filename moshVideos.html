@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style2.css" /> -->
+    <!-- <script src="./JavaScript/moshVideos.js" defer></script> -->
+    <style>
+      *,
+      *::before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px rgb(0, 0, 0);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgb(64, 10, 134);
+        border-radius: 10px;
+      }
+
+      ::webkt-scrollbar-thumb:hover {
+        background: red;
+      }
+
+      body {
+        background-color: rgb(24, 0, 56);
+        width: 100%;
+        padding: 20px;
+        /* display: flex; */
+        /* justify-self: space; */
+      }
+
+      h2 {
+        color: white;
+      }
+
+      .VideoContainer {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        height: 800px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: rgb(36, 9, 72);
+        border-radius: 6px;
+      }
+
+      .videoList {
+        width: 100%;
+        list-style-type: decimal;
+        color: rgba(255, 255, 255, 0.356);
+        font-size: 1.5rem;
+      }
+
+      .videoList li {
+        list-style-position: inside;
+        margin-top: 30px;
+        border-top: 2px solid rgba(255, 255, 255, 0.144);
+      }
+
+      .videoList li::before {
+        content: "video";
+      }
+
+      .video {
+        width: 100%;
+      }
+    </style>
+    <title>Coding</title>
+  </head>
+
+  <!-- =====================html section========================= -->
+  <body>
+    <!-- <section class="VideoContainer">
+      <h2>The Big O Notation (16 m)</h2>
+      <ul class="videoList" id="videoList"></ul>
+    </section> -->
+
+    <!-- =======================script section================== -->
+    <script>
+
+      const category = ['The Big O Notation (16 m)', 'Arrays (30 m)'];
+
+      const videocategory = {
+        linkSet1: `https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN
+https://cdn.fs.teachablecdn.com/xg9GxOKaS2CgP1miKpmX
+https://cdn.fs.teachablecdn.com/fWO9ymnlQ7uDT4K9s5Ia
+https://cdn.fs.teachablecdn.com/RF7hTREHQTuj0rF9wQeg
+https://cdn.fs.teachablecdn.com/VgZ6YKzSQ3aSigduN78q
+https://cdn.fs.teachablecdn.com/LIOshrFR7OOUYfMXI5D3
+https://cdn.fs.teachablecdn.com/R9tUqYo0TSa1MVYzNf12
+https://cdn.fs.teachablecdn.com/DC6vhfyWSr625KQPNTsr`,
+
+        linkSet2: `https://cdn.fs.teachablecdn.com/WJrLWIh5TS2Jb2PtzMMZ
+https://cdn.fs.teachablecdn.com/YekxiRODRkWIxkVTivTF
+https://cdn.fs.teachablecdn.com/bZhhKsn6QmKeQqXQHz9b
+https://cdn.fs.teachablecdn.com/3q0Oqrf3QJeTR00lp1Gx
+https://cdn.fs.teachablecdn.com/xXUZupSQiRcVYXLvc4xg
+https://cdn.fs.teachablecdn.com/cjIvN1LoQAWSdSsZWcSd
+https://cdn.fs.teachablecdn.com/lEBHmobPREmnnkOXQGlH
+https://cdn.fs.teachablecdn.com/WaQASRESSW5fiMKy2gVV
+https://cdn.fs.teachablecdn.com/MaCaiVOGSBauDifggtny
+https://cdn.fs.teachablecdn.com/iCB1dhmgTQyzbUprNR3p
+https://cdn.fs.teachablecdn.com/fwck8BHbTlW7nP90SJu0
+https://cdn.fs.teachablecdn.com/8904CKPjSSGtRZZbje5z
+https://cdn.fs.teachablecdn.com/NEXxfO4USOWGff7m51vD
+https://cdn.fs.teachablecdn.com/t4BcQLfhQymbgdvkzH1S
+https://cdn.fs.teachablecdn.com/jHnQIsPTS3ubQQzrha8y
+https://cdn.fs.teachablecdn.com/fBkbAWZTTsqxy5fMhIsk
+https://cdn.fs.teachablecdn.com/T9UOhjidSlOGBBQse98L
+https://cdn.fs.teachablecdn.com/9v6qdTgmTdydjpqNOP6M`,
+      };
+      const body = document.body;
+
+      for(let i = 0; i <= category.length - 1; i++){
+        const section = document.createElement("section");
+        section.setAttribute("class", "VideoContainer");
+
+        const h2 = document.createElement("h2");
+        h2.textContent = category[i];
+
+        section.append(h2);
+
+        const ol = document.createElement("ol");
+        ol.setAttribute("class", "videoList");
+        ol.setAttribute("id", `videoList${i + 1}`);
+        let idList = ol.getAttribute("id");
+
+        section.append(ol);
+
+        body.append(section);
+      }
+
+      for(let i = 0; i<= category.length - 1; i++){
+        const objectArray = Object.entries(videocategory);
+        const obArray = (objectArray[i]);
+        for(let num =0 ; num<= objectArray.length - 1; num++){
+          console.log(obArray[num]);
+        }
+        
+      }
+
+
+      for(let i = 0; i<= category.length - 1; i++){
+        const linksArray = videocategory.linkSet1.split("\n");
+
+        const videoList = document.querySelector(`#videoList${i + 1}`);
+
+          for (link of linksArray) {
+        const video = document.createElement("video");
+        video.setAttribute("src", link);
+        video.setAttribute("controls", "auto");
+        video.setAttribute("preload", "none");
+        video.classList = "video";
+
+        const videoLi = document.createElement("li");
+        videoLi.append(video);
+        videoList.append(videoLi);
+      }
+      }
+
+      // for (link of linksList) {
+      //   const video = document.createElement("video");
+      //   video.setAttribute("src", link);
+      //   video.setAttribute("controls", "auto");
+      //   video.setAttribute("preload", "none");
+      //   video.classList = "video";
+
+      //   const videoLi = document.createElement("li");
+      //   videoLi.append(video);
+      //   videoList.append(videoLi);
+      // }
+    </script>
+  </body>
+</html>
