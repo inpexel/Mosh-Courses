@@ -206,7 +206,7 @@
       }
 
       const typeScript = document.querySelector("#TypeScript");
-      const typeScriptHeadings = ['Welcome (2m)', 'Getting Started with TypeScript (20m)', 'Fundamentals (25m)', 'Advanced Types (26m)'];
+      const typeScriptHeadings = ['Welcome (2m)', 'Getting Started with TypeScript (20m)', 'Fundamentals (25m)', 'Advanced Types (26m)', 'Classes, Interfaces and Object-oriented Programming (55m)', 'Generics (29m)', 'Decorators (29m)', 'Modules (16m)', 'Integration with JavaScript (12m)', 'React with TypeScript (30m)', 'Node and Express with TypeScript (20m)', 'Course Wrap Up'];
       const typeScriptVideoLinks = [
         [`https://cdn.fs.teachablecdn.com/sRUUDOXvToyMWDvM4Y5c
           https://cdn.fs.teachablecdn.com/zznHMIFTbiB61erhgZwQ
@@ -236,16 +236,584 @@
           https://cdn.fs.teachablecdn.com/HdBzU3ZWR4KjJTDaz60G
           https://cdn.fs.teachablecdn.com/BMUY2NPuQ6aognJyfDBS
           https://cdn.fs.teachablecdn.com/Oq90oRhrTK2kjKxCX8yH
-          https://cdn.fs.teachablecdn.com/ra87B6d4SmKnZu1OUReA`]];
+          https://cdn.fs.teachablecdn.com/ra87B6d4SmKnZu1OUReA`],
+        [`https://cdn.fs.teachablecdn.com/FTydXoicTUiHV8RdxYsR
+          https://cdn.fs.teachablecdn.com/I6gR0BpSFaXxnI8IJkQQ
+          https://cdn.fs.teachablecdn.com/mOi8M8UJRZqmZavbaNFI
+          https://cdn.fs.teachablecdn.com/UfqBPXE3TKJMy55CDZTy
+          https://cdn.fs.teachablecdn.com/J8GafnU9RxatpjyYorLA
+          https://cdn.fs.teachablecdn.com/OJRF7bnSBmOAhrqhGBsg
+          https://cdn.fs.teachablecdn.com/ijbdfhqXT2aov2mzzj8G
+          https://cdn.fs.teachablecdn.com/os72U0jYT3aPxCwAdy68
+          https://cdn.fs.teachablecdn.com/A9yVS8d5RSy7BqP1ZQen
+          https://cdn.fs.teachablecdn.com/RY9MuPbjR9yWeDrI1FBp
+          https://cdn.fs.teachablecdn.com/NlkaGDgZTd2JJDeDNfh5
+          https://cdn.fs.teachablecdn.com/F1g77341Qz6Fhxke6NIS
+          https://cdn.fs.teachablecdn.com/yIl9aYojScqqWjNSG7Y3
+          https://cdn.fs.teachablecdn.com/81RXMQy5TnasP2MctCZi
+          https://cdn.fs.teachablecdn.com/sBH32Y1oToai4I7OTvHV`],
+        [`https://cdn.fs.teachablecdn.com/Vu7aJhOWT8aCTOQWeAGz
+          https://cdn.fs.teachablecdn.com/FBCNAfNOS4ievG5rytBg
+          https://cdn.fs.teachablecdn.com/eEHG6fgwRPu0vAoeTBiO
+          https://cdn.fs.teachablecdn.com/QxFZr61gQcSJzDwvCVU6
+          https://cdn.fs.teachablecdn.com/aq6Y7DWNS5uRe2ZwZuP3
+          https://cdn.fs.teachablecdn.com/ZWFHmoeAR4mUsBuBRIZC
+          https://cdn.fs.teachablecdn.com/yuPtcTkDQLOx5Dng7K4a
+          https://cdn.fs.teachablecdn.com/vVIw22aTSiyseBpTPrLz
+          https://cdn.fs.teachablecdn.com/yOa0QaSWQAuyrJnT6P7i`],
+          [`https://cdn.fs.teachablecdn.com/O5NO8vuFQbC0KChhd4lA
+          https://cdn.fs.teachablecdn.com/OHFtfoanTCOxSD0hV1UQ
+          https://cdn.fs.teachablecdn.com/oVbbOUVJSWCY3GfvCbuT
+          https://cdn.fs.teachablecdn.com/eQmYa5yVTuSX7l3k87WP
+          https://cdn.fs.teachablecdn.com/rXhSVZ1SQkuEP7yvRkbA
+          https://cdn.fs.teachablecdn.com/yIz1OzTBTVOLOGNKAxEJ
+          https://cdn.fs.teachablecdn.com/SpFDVeupT7GqAwHNefuh
+          https://cdn.fs.teachablecdn.com/Up2fNT0YTNW4DLImFLGU
+          https://cdn.fs.teachablecdn.com/8ZFpEGu9S4WYQpmGodxK`],
+          [`https://cdn.fs.teachablecdn.com/tqkvSyr9Q7yAK5PhLjKv
+          https://cdn.fs.teachablecdn.com/bGPULMSzQdKmn3N3XCB4
+          https://cdn.fs.teachablecdn.com/gDFPY6jR8aOKhyZd6qIK
+          https://cdn.fs.teachablecdn.com/JbChkIctSfynKmZf1HI1
+          https://cdn.fs.teachablecdn.com/QIpccmXxR7KR3WSOR7yv
+          https://cdn.fs.teachablecdn.com/JRmRtmpRLSWrYaz8V9uk
+          https://cdn.fs.teachablecdn.com/n7TMFnjIRPazFRlzlEMA`],
+          [`https://cdn.fs.teachablecdn.com/vAZym77IR8ub68ML2Hsz
+          https://cdn.fs.teachablecdn.com/P9lcOQjuTGqHq3KrAwro
+          https://cdn.fs.teachablecdn.com/kWOS2vHkSQSSgLCVPdVa
+          https://cdn.fs.teachablecdn.com/GXTs81IeRiSnYbS6yTPw
+          https://cdn.fs.teachablecdn.com/hQrYnm1iTYO4b0eNNLDc
+          https://cdn.fs.teachablecdn.com/sBfaDirCRDGzC0kbFBzB`],
+          [`https://cdn.fs.teachablecdn.com/gou1jf3mTZi5VSeU5k62
+          https://cdn.fs.teachablecdn.com/zXjNI646T4uqIBmrTiPC
+          https://cdn.fs.teachablecdn.com/q3UM1GagSrig0cz84JhX
+          https://cdn.fs.teachablecdn.com/rCx4duRyR1iD3lHLRGko
+          https://cdn.fs.teachablecdn.com/yJ34qAKeS2eehsyCOryF
+          https://cdn.fs.teachablecdn.com/dDiqe3c7RQKU1cpuzNV3
+          https://cdn.fs.teachablecdn.com/VfoDLxZTKqEjLfBAvFap
+          https://cdn.fs.teachablecdn.com/C1LOEhrcRz6sZtuEVPKy
+          https://cdn.fs.teachablecdn.com/HGEbQa2pT0iCcWU0oMRI
+          https://cdn.fs.teachablecdn.com/gfncmk0kSiOXdKFwZldt`],
+          [`https://cdn.fs.teachablecdn.com/2wjVjOfR5qVJaaqbDUUf
+          https://cdn.fs.teachablecdn.com/Dx1xsh76QizU1EP5wFBK
+          https://cdn.fs.teachablecdn.com/nDXwgW7KTwChDFtN3i8w
+          https://cdn.fs.teachablecdn.com/JYwykn46Tfm4oq5VtvXC
+          https://cdn.fs.teachablecdn.com/dJDozZCZSgWCDkf9pAv3
+          https://cdn.fs.teachablecdn.com/9W96aJFNRze5qsAOJfMo
+          https://cdn.fs.teachablecdn.com/CCK4cbEGQW2pnRwcO2LA`],
+          [`https://cdn.fs.teachablecdn.com/K98phVNQdGIM4Xslj0BJ`]];
 
-      // for(let courseSectionHeading of courseSectionHeadings){
-      //   const h2 = document.createElement('h2');
-      //   const videoContainer = document.createElement('div');
-      //   videoContainer.setAttribute("class", "courseParts");
-      //   h2.innerText = courseSectionHeading;
-      //   videoContainer.append(h2);
-      //   typeScript.append(videoContainer);
-      // }
+      const SQL = document.querySelector('#SQL');
+      const SQLHeadings = ['Getting Started (00:25)', 'Retrieving Data From a Single Table (00:53)', 'Retrieving Data From Multiple Tables (01:02)', 'Inserting, Updating, and Deleting Data (00:42)', 'Summarizing Data (00:33)', 'Writing Complex Query (00:45)', 'Essential MySQL Functions (00:33)', 'Views (00:18)', 'Stored Procedures (00:48)', 'Triggers and Events (00:22)', 'Transactions and Concurrency (00:49)', 'Data Types (00:35)', 'Designing Databases (01:30)', 'Indexing for High Performance (00:58)', 'Securing Databases (00:20)'];
+      const SQLVideoLinks = [[`https://cdn.fs.teachablecdn.com/wePUPergTeeOoETUKyrD
+                              https://cdn.fs.teachablecdn.com/KAXckNQO69WX6TrsATAg
+                              https://cdn.fs.teachablecdn.com/B9XN2VdgQSWfnrecfUCh
+                              https://cdn.fs.teachablecdn.com/PAeLrG1vSxeTAt7oIn0A
+                              https://cdn.fs.teachablecdn.com/7PEIAywFTtybMilbJIcI
+                              https://cdn.fs.teachablecdn.com/i5NkVwu2R7IZisWYxVzE
+                              https://cdn.fs.teachablecdn.com/eUWLeRlJTM6G6LHbTQZ6`],
+                              [`https://cdn.fs.teachablecdn.com/ARvQta3BSB2uayK0mTze
+                              https://cdn.fs.teachablecdn.com/ijrBl44FQxG4oT9Nc96H
+                              https://cdn.fs.teachablecdn.com/SL94iObeTcsQIPM3InVg
+                              https://cdn.fs.teachablecdn.com/tCVFmUoWQJWo01YwCxv0
+                              https://cdn.fs.teachablecdn.com/VJG2RXL8Rbmf1aJahlIf
+                              https://cdn.fs.teachablecdn.com/Zt1gAQuT561Vnuf5Z8EZ
+                              https://cdn.fs.teachablecdn.com/AWKmeXHuSqioE7AwFJWC
+                              https://cdn.fs.teachablecdn.com/WQTCq5fUQlupAZaq47KC
+                              https://cdn.fs.teachablecdn.com/FPHO8rOFS22m8fHZi6mQ
+                              https://cdn.fs.teachablecdn.com/GXsHXFh6RxKElBryYNKg
+                              https://cdn.fs.teachablecdn.com/48z6F7SVR2WP27nHQZ9y`],
+                              [`https://cdn.fs.teachablecdn.com/hY7ntBiT4uZA336RCrPM
+                              https://cdn.fs.teachablecdn.com/ZVA3HPtARN22cYYszzau
+                              https://cdn.fs.teachablecdn.com/IBey0ZB3ReuSbQDvVRAC
+                              https://cdn.fs.teachablecdn.com/1HQDVu8FQ5m284erWn4C
+                              https://cdn.fs.teachablecdn.com/FIrJi6qUQmifS9apm7kQ
+                              https://cdn.fs.teachablecdn.com/7V0IYw3ZRJWGdl6q4py6
+                              https://cdn.fs.teachablecdn.com/Dr9yciAbQvWdbx4cQmiG
+                              https://cdn.fs.teachablecdn.com/4QoSSoSSvDyMCcSjI3g1
+                              https://cdn.fs.teachablecdn.com/TnyiEO2PSyaH1HdsPa6e
+                              https://cdn.fs.teachablecdn.com/9989TtEgTi2L0Bsye0Oq
+                              https://cdn.fs.teachablecdn.com/GSmcSIcLTveIsGDv1UXY
+                              https://cdn.fs.teachablecdn.com/NZEjbMqdSfqwjY4hgcjg
+                              https://cdn.fs.teachablecdn.com/aPeBG6ZRmqD9WS9xzgAS`],
+                              [`https://cdn.fs.teachablecdn.com/uIskliPSc6NlSIqvdR1n
+                              https://cdn.fs.teachablecdn.com/DKFjqDnQS65UA0gl138S
+                              https://cdn.fs.teachablecdn.com/JXkzxnGUSwO8IQ9rszfM
+                              https://cdn.fs.teachablecdn.com/hi53c1sFR86SUPqMtJxS
+                              https://cdn.fs.teachablecdn.com/PFyogbmSvyA7ZZ0sg8mB
+                              https://cdn.fs.teachablecdn.com/rDiGvj8BS6yuxJrQEEXp
+                              https://cdn.fs.teachablecdn.com/iMQoSgWiT0W0PDhylQ5d
+                              https://cdn.fs.teachablecdn.com/n7gn92JyR9aU7ao3mjy6
+                              https://cdn.fs.teachablecdn.com/rd4RjzAXRxCF16NMmGWJ
+                              https://cdn.fs.teachablecdn.com/gjBExioSNaguKV9KIIPL`],
+                              [`https://cdn.fs.teachablecdn.com/Y4d4bm82SFmcEmY8K5zq
+                              https://cdn.fs.teachablecdn.com/pYoBRcB7TiiPSckNJtdD
+                              https://cdn.fs.teachablecdn.com/6Q25rISJSk6Gr7Slpr9B
+                              https://cdn.fs.teachablecdn.com/ycgBjlIR8qMZKt643XJd`],
+                              [`https://cdn.fs.teachablecdn.com/tcNW6j2ZREOex5lTsgkN
+                              https://cdn.fs.teachablecdn.com/eeZvMEMSWCIUpLu2gIZh
+                              https://cdn.fs.teachablecdn.com/6v0fJ4YQ4G7YuvGgdiXw
+                              https://cdn.fs.teachablecdn.com/Cnl47angSTi9uB584nrn
+                              https://cdn.fs.teachablecdn.com/mnZiLoTsT2aVElndVpsb
+                              https://cdn.fs.teachablecdn.com/2QiFv9BgQ8mYbAy4NW4n
+                              https://cdn.fs.teachablecdn.com/lTNUERPUSSmTrhi2t3yY
+                              https://cdn.fs.teachablecdn.com/2iCxM6BeTPKUCOQXppFV
+                              https://cdn.fs.teachablecdn.com/n8tt9x3SWiDp6IUC5BlW
+                              https://cdn.fs.teachablecdn.com/Jvsr0PZSHSm1Je1CIQhA`],
+                              [`https://cdn.fs.teachablecdn.com/1fjrtIfQGOthOU9aSzpw
+                              https://cdn.fs.teachablecdn.com/8PtbVQ2iSYywy0etHZLP
+                              https://cdn.fs.teachablecdn.com/aeZx5xTSxeD1BtpG0PNr
+                              https://cdn.fs.teachablecdn.com/nCIAvEXQKqOBAoZCpqH8
+                              https://cdn.fs.teachablecdn.com/hbMnInuTlm5vrD8O5MqU
+                              https://cdn.fs.teachablecdn.com/wRaiqu0gRwiy3jSFYt98
+                              https://cdn.fs.teachablecdn.com/ivz92JwQc6IZAc24VXA3
+                              https://cdn.fs.teachablecdn.com/j3N3FSzXSlKZgGoIPm7j`],
+                              [`https://cdn.fs.teachablecdn.com/JHyM7ftLQAecvm5Rjmuf
+                              https://cdn.fs.teachablecdn.com/02n33vhnRb6ugCneaDyf
+                              https://cdn.fs.teachablecdn.com/llkU1YtUTNiaviw4043G
+                              https://cdn.fs.teachablecdn.com/kXM6pmA4QkuNE6I4GI25
+                              https://cdn.fs.teachablecdn.com/5puwiNApRPSz4gNxtTlH`],
+                              [`https://cdn.fs.teachablecdn.com/iBVmcVLOQy6qnx2HTyDY
+                              https://cdn.fs.teachablecdn.com/Jzs27BhRQK9HmJv2Es6P
+                              https://cdn.fs.teachablecdn.com/1VkiMkWS0aGOXsIPaInf
+                              https://cdn.fs.teachablecdn.com/aGeG28TdQiGuKg3bDa2j
+                              https://cdn.fs.teachablecdn.com/HVetPzUwQKc9Txh0revQ
+                              https://cdn.fs.teachablecdn.com/VMyzZI5ASXCYJn3fHq5g
+                              https://cdn.fs.teachablecdn.com/ZIMBoDe3SMOq9iJl0oVS
+                              https://cdn.fs.teachablecdn.com/tnzNYYzhQaKVOJNhjNEj
+                              https://cdn.fs.teachablecdn.com/df8EhVOScejoxnAhIPNS
+                              https://cdn.fs.teachablecdn.com/qNExIzj4RwiGuLmn96IB
+                              https://cdn.fs.teachablecdn.com/b4MGqYrNRayX2zNCU5Mq`],
+                              [`https://cdn.fs.teachablecdn.com/38cJgPopR1SG6sPZUukr
+                              https://cdn.fs.teachablecdn.com/Vz9aWbXJSbqKfYOKQimP
+                              https://cdn.fs.teachablecdn.com/lHyty2IQmaHBnmxCFxLg
+                              https://cdn.fs.teachablecdn.com/8fi93kwnR4mfwzTFcJfq
+                              https://cdn.fs.teachablecdn.com/sKWjQINBRXC5dTatO8Bm
+                              https://cdn.fs.teachablecdn.com/pgr5U3OSTbW00jR26WoY
+                              https://cdn.fs.teachablecdn.com/wUvXfm3xRlSYAxZLXn7n`],
+                              [`https://cdn.fs.teachablecdn.com/ruf3lOFVTjSFMjRblBCo
+                              https://cdn.fs.teachablecdn.com/CziyLu7ATuisDZAullIH
+                              https://cdn.fs.teachablecdn.com/hUozcpY0TgWOalajgbnK
+                              https://cdn.fs.teachablecdn.com/9g1OUcF0TLaPMJwW4cEC
+                              https://cdn.fs.teachablecdn.com/yAITG7hiTEuKJEALGTue
+                              https://cdn.fs.teachablecdn.com/G8rCeSAqRYeRp96hlfOM
+                              https://cdn.fs.teachablecdn.com/2lMQB6RP6IlwdIeu9jZw
+                              https://cdn.fs.teachablecdn.com/dd1625ZvTsOmWGWMak2Q
+                              https://cdn.fs.teachablecdn.com/46sk98JTfmnjyErMSqiG
+                              https://cdn.fs.teachablecdn.com/l96QpHYKT1ayaHytZ7EW`],
+                              [`https://cdn.fs.teachablecdn.com/nqGXJXwmQ6yEbn0UjuoG
+                              https://cdn.fs.teachablecdn.com/DAvKiAxRGayPcXMz1uzA
+                              https://cdn.fs.teachablecdn.com/BuW65TUvRoihmlWtK5z0
+                              https://cdn.fs.teachablecdn.com/lLLYsgnZREeJrGQZCAog
+                              https://cdn.fs.teachablecdn.com/h6c7J70ZTUBy1GFtUPLQ
+                              https://cdn.fs.teachablecdn.com/mcrK47MReOBBWfGOChPj
+                              https://cdn.fs.teachablecdn.com/JGnJq7l3Tzaqh3zSIZQH
+                              https://cdn.fs.teachablecdn.com/l6W4rCWdQAKyLAqs8PaB
+                              https://cdn.fs.teachablecdn.com/ctpdVDRRKG5MefbAiolA`],
+                              [`https://cdn.fs.teachablecdn.com/keTf9ZURTJCOudeAChjD
+                              https://cdn.fs.teachablecdn.com/HJsdwLeqRm2MvqtVj546
+                              https://cdn.fs.teachablecdn.com/TSNqlSwjTbqw7kyHMXZa
+                              https://cdn.fs.teachablecdn.com/Yv7WurJVRlujbwLC22Qq
+                              https://cdn.fs.teachablecdn.com/5HsFq7PBTADr7V7Bay3W
+                              https://cdn.fs.teachablecdn.com/iSTYBwH3SrKLGylSW3j0
+                              https://cdn.fs.teachablecdn.com/JPy3STfSJaVyWD0TCF3H
+                              https://cdn.fs.teachablecdn.com/TxRZPabTQaWaG2B3HW3k
+                              https://cdn.fs.teachablecdn.com/o7XxXxC5RGSeymwGgB54
+                              https://cdn.fs.teachablecdn.com/pOieXFBTwu4lSPVA1oUX
+                              https://cdn.fs.teachablecdn.com/g71Bstb2QlyaKyfqkNr6
+                              https://cdn.fs.teachablecdn.com/It7zbGHlRu2obzW2Qo1D
+                              https://cdn.fs.teachablecdn.com/Q5nE8pqhSVyjgXLhga43
+                              https://cdn.fs.teachablecdn.com/cJlRTnTug7qz4vq0h2ge
+                              https://cdn.fs.teachablecdn.com/RIXVCkKT72USfJ90b7mw
+                              https://cdn.fs.teachablecdn.com/KSSlQn6rTUKX6GDNeVOk
+                              https://cdn.fs.teachablecdn.com/bgH5rOIJQJyc7AYI6eRS
+                              https://cdn.fs.teachablecdn.com/4JOeADriQZGzuh4Jhj3D
+                              https://cdn.fs.teachablecdn.com/giDMRGzGQwuakOl8nBJR
+                              https://cdn.fs.teachablecdn.com/bjpSmY2vQruXqvjVDiJv
+                              https://cdn.fs.teachablecdn.com/82yoUzQE61yBi2RxSmw6
+                              https://cdn.fs.teachablecdn.com/5VcSflWTG2h391pnV4Q9
+                              https://cdn.fs.teachablecdn.com/t6Eu0KzaRTefQ7aoYun0
+                              https://cdn.fs.teachablecdn.com/3B3JPGKtT5iSymoTbCVD
+                              https://cdn.fs.teachablecdn.com/f41iz5o7Qj2WAiFktNSn
+                              https://cdn.fs.teachablecdn.com/P6zEj7zTQydcjVxTXMiA
+                              https://cdn.fs.teachablecdn.com/ERvFUsLFQuWnC4QJR3sY
+                              https://cdn.fs.teachablecdn.com/pKn0MklJTXSHZVLq0Exl
+                              https://cdn.fs.teachablecdn.com/vJyiK8g5RbaJxjhEqgnE
+                              https://cdn.fs.teachablecdn.com/okaZhhCTe6fdR5jRqgBJ
+                              https://cdn.fs.teachablecdn.com/zhWbO3mfTuSqxMELCT9y`],
+                              [`https://cdn.fs.teachablecdn.com/Ms7CHvs6Qz67FzPdX8rD
+                              https://cdn.fs.teachablecdn.com/uSZMijx6TEic6Dd4A7Nd
+                              https://cdn.fs.teachablecdn.com/OAAlsKtBTSaRrmS0Op5x
+                              https://cdn.fs.teachablecdn.com/hbOJOyrQMOpeQzDjX0BY
+                              https://cdn.fs.teachablecdn.com/LqqaAQGZShOMsA2yUuUy
+                              https://cdn.fs.teachablecdn.com/zKGU9TfGSK6gEhbDYi1V
+                              https://cdn.fs.teachablecdn.com/LjlB60NQMm9GhgaQ6vbF
+                              https://cdn.fs.teachablecdn.com/Q263uQNbSTaIrzTywl3w
+                              https://cdn.fs.teachablecdn.com/2mFxBpPeRFavJuU6zaeB
+                              https://cdn.fs.teachablecdn.com/uPOxoNSTJi7tjLj63F6E
+                              https://cdn.fs.teachablecdn.com/rUNbPS1GRB27pE7Ts5a9
+                              https://cdn.fs.teachablecdn.com/o2VbnK0hQnud5HrTgAqL
+                              https://cdn.fs.teachablecdn.com/outsRGwGSk2CRuXChfwK
+                              https://cdn.fs.teachablecdn.com/QO8p66U1QLuQEuNHMw7o`],
+                              [`https://cdn.fs.teachablecdn.com/tviZ2lB5S6G4awr9U1hT
+                              https://cdn.fs.teachablecdn.com/9PfqzEQSu6DVpNHfx82g
+                              https://cdn.fs.teachablecdn.com/tRTi79N6R6GgHKoW7gcr
+                              https://cdn.fs.teachablecdn.com/HAcYb6HQ8WAVnGxecGrw
+                              https://cdn.fs.teachablecdn.com/TOKmWq5bQCeHLRCMwITV
+                              https://cdn.fs.teachablecdn.com/DwL029C6QA2b7ACHP6dl
+                              https://cdn.fs.teachablecdn.com/MXRiD1oKRm281sbhXTs2
+                              https://cdn.fs.teachablecdn.com/fA6fBC41T2uWqtSLBqdN
+                              https://cdn.fs.teachablecdn.com/eEGsbl82S1uEYoHpoieH`]];
+
+      const C_Sharp = document.querySelector("#C_Sharp");
+      const C_SharpHeadings = ['Part1 Getting Started (20m)', 'Primitive Types and Expressions (35m)', 'Non-Primitive Types (1h)', 'Control Flow (40m)', 'Arrays and Lists (30m)', 'Working with Dates (10m)', 'Working with Text (50m)', 'Working with Files (25m)', 'Debugging Applications (40m)', 'Part 2 Introduction (3m)', 'Classes (1h50m)', 'Association Between Classes (25m)', 'Inheritance: Second Pillar of OOP (50m)', 'Polymorphism: Third Pillar of OOP (35m)', 'Interfaces (1h5m)', 'Students Code Reviews (35m)', 'Part 3 Introduction (1m)', 'Advanced C# Topics (2h25m)'];
+      const C_SharpVideoLinks = [[`https://cdn.fs.teachablecdn.com/O8xMSriwQ0ejF1DL0VKe
+https://cdn.fs.teachablecdn.com/j67FtXwRky3EhchRGDaT
+https://cdn.fs.teachablecdn.com/2OUUBXzCSny7y97jeK9r
+https://cdn.fs.teachablecdn.com/tKkDryVQTEyRShMY2l49
+https://cdn.fs.teachablecdn.com/U6rlyptPSC9VqkiXgPWQ
+https://cdn.fs.teachablecdn.com/DgYlGavETq6rvzBW3lwF`],
+      [`https://cdn.fs.teachablecdn.com/JISJ5QoIQi9iOssLa2Hv
+https://cdn.fs.teachablecdn.com/bu8cgoprShKzO1AKQYty
+https://cdn.fs.teachablecdn.com/FKJ6PGAvTF8Fcg17fXdm
+https://cdn.fs.teachablecdn.com/S57oiwubQlmZgqza22TO
+https://cdn.fs.teachablecdn.com/XfzWg1fGQsKmmT3wtGeh
+https://cdn.fs.teachablecdn.com/FxShuoZeQ1e55LeqCdfi
+https://cdn.fs.teachablecdn.com/xRU0FefRiS39VhW1dz0g
+https://cdn.fs.teachablecdn.com/6VAYgBoTTsi75WP0ox5b
+https://cdn.fs.teachablecdn.com/Ujmbd1XQd27eHSU5dypA
+https://cdn.fs.teachablecdn.com/sWbBlb1Q4Cy4KsSRITqC
+https://cdn.fs.teachablecdn.com/itlakTYhSLy3fRFxoweh`],
+      [`https://cdn.fs.teachablecdn.com/0f02M4z8RKm3IrWqAmhU
+https://cdn.fs.teachablecdn.com/R1BHeJ9uQbqCRGQUiYW5
+https://cdn.fs.teachablecdn.com/HbyqRL6cQWurTVur04fO
+https://cdn.fs.teachablecdn.com/YWxvehT9yjMop9o6tHGQ
+https://cdn.fs.teachablecdn.com/RK1q36PEStqaiI7kTi0s
+https://cdn.fs.teachablecdn.com/TBTAYL5T3dNhQsaxZA6w
+https://cdn.fs.teachablecdn.com/RqcExXRBT1ufSI0S9V21
+https://cdn.fs.teachablecdn.com/476xjE6RnG5bNHhxWuuH
+https://cdn.fs.teachablecdn.com/5GJntf8uTzycC3SrQejK
+https://cdn.fs.teachablecdn.com/a1XB8KspR0y8JAqdLRRW
+https://cdn.fs.teachablecdn.com/3U9F96yORxm0tjmRLTI6
+https://cdn.fs.teachablecdn.com/32Erj4sTIWVg9V7mhwjO
+https://cdn.fs.teachablecdn.com/g5oGyG1fS3WilkZ5y8tV
+https://cdn.fs.teachablecdn.com/zFcpUeERXKR2YrxdTeUj`],
+      [`https://cdn.fs.teachablecdn.com/UFBtR89RM6Qz3iCauDjV
+https://cdn.fs.teachablecdn.com/Xm9bdOROTbOCAwIkuZNg
+https://cdn.fs.teachablecdn.com/95hN5u7vR76IFJEbzAJw
+https://cdn.fs.teachablecdn.com/vR0QU7ldTMCuLqoWGugl
+https://cdn.fs.teachablecdn.com/5zMBcnqIQwmb48BoPfX3
+https://cdn.fs.teachablecdn.com/FYpCZlOPSjS3kBiFUv3b
+https://cdn.fs.teachablecdn.com/QEL1wlPYSH2bTeIyvjAQ
+https://cdn.fs.teachablecdn.com/LLivtEf4S2CoXfQDNlj2
+https://cdn.fs.teachablecdn.com/TQPzmDTmuyYEIZ6T9jxA
+https://cdn.fs.teachablecdn.com/uGgKcWBxQZibCGhSgN4a
+https://cdn.fs.teachablecdn.com/FC8W2zK9R2uK8VLGbv7U`],
+      [`https://cdn.fs.teachablecdn.com/JO8D9urtTxCGah2CMCg6
+https://cdn.fs.teachablecdn.com/mmWj5FgeR6KYctXwQa0U
+https://cdn.fs.teachablecdn.com/Zmf3Uzj2RUhO85zqhXWy
+https://cdn.fs.teachablecdn.com/XsoZNMURvKbpzHAcrJge
+https://cdn.fs.teachablecdn.com/R6EMJo8dRXeoD4ecF8EL
+https://cdn.fs.teachablecdn.com/iivZ5qSmQ9SggyKX9gVr`],
+[`https://cdn.fs.teachablecdn.com/LMKTUWX8RgqsOVzbTL1w
+https://cdn.fs.teachablecdn.com/HQL5g4kwS9CjtV7Q22zb
+https://cdn.fs.teachablecdn.com/Ofkc0V5bRPuxK7saX0RQ
+https://cdn.fs.teachablecdn.com/bVuQQKuROndMEei0Uc7w`],
+[`https://cdn.fs.teachablecdn.com/w1OTjeoATFGwiz9odRD7
+https://cdn.fs.teachablecdn.com/6yhPzffAS3KRt0LH5GIC
+https://cdn.fs.teachablecdn.com/fCmP6QfIRaRMF0oNabCu
+https://cdn.fs.teachablecdn.com/dbowpbeKRX2U1X8R4v0H
+https://cdn.fs.teachablecdn.com/iUzvGjNZR5uaakKU6Et4
+https://cdn.fs.teachablecdn.com/oDVqJQPsSqSgmB9wPcfx
+https://cdn.fs.teachablecdn.com/elF8S2WoTyagTpfgeQcQ (pdf)
+https://cdn.fs.teachablecdn.com/jbhQwlUQBmoamlnJm7ns
+https://cdn.fs.teachablecdn.com/RaJfapBvRhzDDo7Oo293 (pdf)
+https://cdn.fs.teachablecdn.com/TVMsBrY2ReijDTeXh8eT`],
+[`https://cdn.fs.teachablecdn.com/Y3oXr7zUR2mcxT8OY2gG
+https://cdn.fs.teachablecdn.com/8qubiIAQUGnaZbNebEcR
+https://cdn.fs.teachablecdn.com/DhUGdhxQQfqf1cHG4IML
+https://cdn.fs.teachablecdn.com/06sC6M4yT06z8RP0xDgw
+https://cdn.fs.teachablecdn.com/SENOt7nUQ7iTzJGEhx3D
+https://cdn.fs.teachablecdn.com/oMXADph3QcOAGBhAq7v4`],
+[`https://cdn.fs.teachablecdn.com/3ZKR6pAmRuWXoUa4Keoi
+https://cdn.fs.teachablecdn.com/2h0QNyvkSIq0IdRrEnFj
+https://cdn.fs.teachablecdn.com/ULGbYvHzQOjg2lbqbNq0
+https://cdn.fs.teachablecdn.com/gh6ltnXSquvJo1m96PjI
+https://cdn.fs.teachablecdn.com/rr25WQMkQ3nH9oI22vsi
+https://cdn.fs.teachablecdn.com/eN5wxF3hTTLusGFaxgZG
+https://cdn.fs.teachablecdn.com/wHICZGwCSiSXRP2fo4Nv
+https://cdn.fs.teachablecdn.com/ANq6oDZSKuu9TlslWiF5`],
+[`https://cdn.fs.teachablecdn.com/i84scqSrQ52dSZWZvdQJ`],
+[`https://cdn.fs.teachablecdn.com/8zw6IHkQom13x8t3ToaE
+https://cdn.fs.teachablecdn.com/1Sqz3MtNS1MSUAsODIUQ
+https://cdn.fs.teachablecdn.com/IAFrBJXJTNnSbRDr1iKJ
+https://cdn.fs.teachablecdn.com/2FVPE6AoTbe0X55HOdPw
+https://cdn.fs.teachablecdn.com/DFj71bO3TfWJhzWKl3MF
+https://cdn.fs.teachablecdn.com/HYmEtxbzQFuvQ6xigDeG
+https://cdn.fs.teachablecdn.com/Sq44rf5wRxIggb0DrXzg
+https://cdn.fs.teachablecdn.com/4X5iDhIQomxZd8uAeH7E`],
+[`https://cdn.fs.teachablecdn.com/JDQiNp1OQYqothPOT8Gg
+https://cdn.fs.teachablecdn.com/AYkVFV7QT9mVYCogBXEN
+https://cdn.fs.teachablecdn.com/cBdvfnmTTqlYR7UPeTz5
+https://cdn.fs.teachablecdn.com/WX7yldF3SBisVURjEzg5
+https://cdn.fs.teachablecdn.com/ZTrBRFoSOyzuxyabBS2L`],
+[`https://cdn.fs.teachablecdn.com/f5JA2iOjRuWkM6AHNP4p
+https://cdn.fs.teachablecdn.com/fywsjRuqRn648jAamGkx
+https://cdn.fs.teachablecdn.com/oBMrRWBRbWXYTR1gyRCb
+https://cdn.fs.teachablecdn.com/xmt08e7R7uRpOj330kiN`],
+[`https://cdn.fs.teachablecdn.com/VMLFty8PSzOiAEl4pYgY
+https://cdn.fs.teachablecdn.com/Rmq5jQGmQNin3CuQZoxu
+https://cdn.fs.teachablecdn.com/n2Q0hsDSNahjQcXJWy8c`],
+[`https://cdn.fs.teachablecdn.com/RcszZXnHSVu1nfKUCCk5
+https://cdn.fs.teachablecdn.com/vDOEyCRSaC8lZjTmdS8Q
+https://cdn.fs.teachablecdn.com/DI0TD2wQTcigMTJQnykx
+https://cdn.fs.teachablecdn.com/E435MdcRG6nqXA4WD2zJ
+https://cdn.fs.teachablecdn.com/2GkKqoVGToWaPTmnfqVD`],
+[`https://cdn.fs.teachablecdn.com/T0wMHPVNQcSa04nIJdjd
+https://cdn.fs.teachablecdn.com/JLC1ujJQ8qHaEA4mQhCe
+https://cdn.fs.teachablecdn.com/opfuFwbZQCuHTpJQaIfs`],
+[`https://cdn.fs.teachablecdn.com/kxveCBXQbKHsS6XJp9Ck`],
+[`https://cdn.fs.teachablecdn.com/mPdvxbzRsSlveM1knxNB
+https://cdn.fs.teachablecdn.com/SV0JcW3JSWe69Zj5HjMy
+https://cdn.fs.teachablecdn.com/3H74u8djSoagD468uMSf
+https://cdn.fs.teachablecdn.com/i5NRSzxEQ9i7OY14MJvE
+https://cdn.fs.teachablecdn.com/g0u7WLesS3qJ0vp5ZkmR
+https://cdn.fs.teachablecdn.com/SutadoXQMa1yuLOKDXeL
+https://cdn.fs.teachablecdn.com/m0JN4KnmR9pmCp92OeRp
+https://cdn.fs.teachablecdn.com/BUVQ0JHzQBmSGRKdp5up
+https://cdn.fs.teachablecdn.com/ghgLdMDlQoWzYt4cOrzl
+https://cdn.fs.teachablecdn.com/TvF1UUE2SlWXWtvCQiru`]]
+      
+      const DSA = document.querySelector("#DSA");
+      const DSAHeadings = [`Part 1 Getting Started`,`The Big O Notation (16 m)`,`Arrays (30 m)`,`Linked Lists (54 m)`, 'Stacks (42 m)', 'Queues (53 m)', 'Hash Tables (68 m)', 'Part 2 Getting Started', 'Binary Trees (73m)', 'AVL Trees (49m)', 'Heaps (53m)', 'Tries (46m)', 'Graphs (66m)', 'Undirected Graphs (59m)', 'Part 3 Getting Started', 'Sorting Algorithms (75m)', 'Searching Algorithms (35m)', 'String Manipulation Algorithms (60m)'];
+      const DSAVideoLinks = [[`https://cdn.fs.teachablecdn.com/70YKMGJ5QT2YfN8mCeE2
+https://cdn.fs.teachablecdn.com/ZJcrwzTR5GmrfIkWAQ5g
+https://cdn.fs.teachablecdn.com/RHR8uEj0TIUoB07XpQvB`],
+      [`https://cdn.fs.teachablecdn.com/jLfZB3gQamNJPq8ofDhN
+https://cdn.fs.teachablecdn.com/xg9GxOKaS2CgP1miKpmX
+https://cdn.fs.teachablecdn.com/fWO9ymnlQ7uDT4K9s5Ia
+https://cdn.fs.teachablecdn.com/RF7hTREHQTuj0rF9wQeg
+https://cdn.fs.teachablecdn.com/VgZ6YKzSQ3aSigduN78q
+https://cdn.fs.teachablecdn.com/LIOshrFR7OOUYfMXI5D3
+https://cdn.fs.teachablecdn.com/R9tUqYo0TSa1MVYzNf12
+https://cdn.fs.teachablecdn.com/DC6vhfyWSr625KQPNTsr`],
+      [`https://cdn.fs.teachablecdn.com/S6ufYgOQ3aC9guw5mv3b
+https://cdn.fs.teachablecdn.com/TjBslJYSimP5XI6rlGaS
+https://cdn.fs.teachablecdn.com/IztFh1elTu6dKB9i9OjA
+https://cdn.fs.teachablecdn.com/CqG0voaSQFSbV9dNKzdk
+https://cdn.fs.teachablecdn.com/dGfqkDeYRPa3uueglloQ
+https://cdn.fs.teachablecdn.com/GdB8mQcdQY6IejlyQpIK
+https://cdn.fs.teachablecdn.com/wTrvEjkxQkWGxp2Z3rbZ
+https://cdn.fs.teachablecdn.com/j1P3UDSQW6s5TtzjcZLQ
+https://cdn.fs.teachablecdn.com/EyStyAJSQ82SIR20ScGd
+https://cdn.fs.teachablecdn.com/niRGDIemR7vOWWoT3JKf`],
+      [`https://cdn.fs.teachablecdn.com/WJrLWIh5TS2Jb2PtzMMZ
+https://cdn.fs.teachablecdn.com/YekxiRODRkWIxkVTivTF
+https://cdn.fs.teachablecdn.com/bZhhKsn6QmKeQqXQHz9b
+https://cdn.fs.teachablecdn.com/3q0Oqrf3QJeTR00lp1Gx
+https://cdn.fs.teachablecdn.com/xXUZupSQiRcVYXLvc4xg
+https://cdn.fs.teachablecdn.com/cjIvN1LoQAWSdSsZWcSd
+https://cdn.fs.teachablecdn.com/lEBHmobPREmnnkOXQGlH
+https://cdn.fs.teachablecdn.com/WaQASRESSW5fiMKy2gVV
+https://cdn.fs.teachablecdn.com/MaCaiVOGSBauDifggtny
+https://cdn.fs.teachablecdn.com/iCB1dhmgTQyzbUprNR3p
+https://cdn.fs.teachablecdn.com/fwck8BHbTlW7nP90SJu0
+https://cdn.fs.teachablecdn.com/8904CKPjSSGtRZZbje5z
+https://cdn.fs.teachablecdn.com/NEXxfO4USOWGff7m51vD
+https://cdn.fs.teachablecdn.com/t4BcQLfhQymbgdvkzH1S
+https://cdn.fs.teachablecdn.com/jHnQIsPTS3ubQQzrha8y
+https://cdn.fs.teachablecdn.com/fBkbAWZTTsqxy5fMhIsk
+https://cdn.fs.teachablecdn.com/T9UOhjidSlOGBBQse98L
+https://cdn.fs.teachablecdn.com/9v6qdTgmTdydjpqNOP6M
+https://cdn.fs.teachablecdn.com/0UBgmytrRd2Ik2ogs3cs`],
+      [`https://cdn.fs.teachablecdn.com/fz4BsciMRe2j0HxJRaiF
+https://cdn.fs.teachablecdn.com/OxbLsmWnQiCwprfG9QYM
+https://cdn.fs.teachablecdn.com/ERVtyV7Sy6SUNKMFi4Yy
+https://cdn.fs.teachablecdn.com/1DvZ7UUSkKZHZpa7fGAI
+https://cdn.fs.teachablecdn.com/w9zzNK4eSA2lMXKbGj7n
+https://cdn.fs.teachablecdn.com/kbWPoMjQOvJD8iJdPsQu
+https://cdn.fs.teachablecdn.com/UWT9buN0SB2wDUeyRiGc
+https://cdn.fs.teachablecdn.com/qlZsLVGxTSKJTCy7jNsE
+https://cdn.fs.teachablecdn.com/cOZJOBZS9OhFMj12kroe
+https://cdn.fs.teachablecdn.com/dda072lQS167MAiKoiUO
+https://cdn.fs.teachablecdn.com/l1MVe8sCTAK4cRGT24OF
+https://cdn.fs.teachablecdn.com/rvsxNNXRA6YRdCdfwjFR
+https://cdn.fs.teachablecdn.com/J07JrC0jQLalyTY9unph`],
+    [`https://cdn.fs.teachablecdn.com/owuc6BgIQmWf0nwDro9C
+https://cdn.fs.teachablecdn.com/g7kZlMPSXumf3PjyOPsb
+https://cdn.fs.teachablecdn.com/9rzR1NMaRVqYZvR4Mv0E
+https://cdn.fs.teachablecdn.com/W9fglN8RASUNFQkxcpXq
+https://cdn.fs.teachablecdn.com/6EtKN9t3SC2N39giQdkJ
+https://cdn.fs.teachablecdn.com/c42yBxZaQrS8FulWMH24
+https://cdn.fs.teachablecdn.com/p3ciwcgUQtW4vKNaikE8
+https://cdn.fs.teachablecdn.com/w1OoxgOaQlyBnjiliK2D
+https://cdn.fs.teachablecdn.com/IpAC94tFR9efv7eRwZ92
+https://cdn.fs.teachablecdn.com/J9EzGMXITFyJMSk206kf
+https://cdn.fs.teachablecdn.com/y88lC0pcRnuXy3lCNXAt
+https://cdn.fs.teachablecdn.com/6r4W4xWhQkSnGmrwTm2Z
+https://cdn.fs.teachablecdn.com/kWg4jkgSQjiqV7lhvfHJ
+https://cdn.fs.teachablecdn.com/4PlLsGWXSOqk1625SAzY
+https://cdn.fs.teachablecdn.com/JucL3RTXSPKl1bKEBV7B`],
+  [`https://cdn.fs.teachablecdn.com/YlZgWHF6Qs25iyKoXsvZ
+https://cdn.fs.teachablecdn.com/OFqGScEORAydl3wgXTO9
+https://cdn.fs.teachablecdn.com/bPg19RacSI2mT0cPJ7nn
+https://cdn.fs.teachablecdn.com/dH47B47yQ1SKGK79yW6e
+https://cdn.fs.teachablecdn.com/MhIcOZSQR1aeSLTIZYLV
+https://cdn.fs.teachablecdn.com/V1EzcJxfTOq9la4k089c
+https://cdn.fs.teachablecdn.com/YEN5Gl2QgKhh3rpSan1U
+https://cdn.fs.teachablecdn.com/9awYNt41RJOCLXBXlYeu
+https://cdn.fs.teachablecdn.com/8v1NhutXSB2wS12RU9hC
+https://cdn.fs.teachablecdn.com/O173bYITToWVvhOLr8ZO
+https://cdn.fs.teachablecdn.com/kx6agQTSHyv724Svpix6
+https://cdn.fs.teachablecdn.com/bkyJuZBpS6afSLxRzzth
+https://cdn.fs.teachablecdn.com/1rNsN4kBRBCBAVIEo1Em
+https://cdn.fs.teachablecdn.com/j22ZteLqSOKpXhlTigMH
+https://cdn.fs.teachablecdn.com/jSy06uq4RnCRoMP6Fxlk
+https://cdn.fs.teachablecdn.com/u765RQkfSYiGMUiWpBrw
+https://cdn.fs.teachablecdn.com/cFEBG7GRRitXkG55YcCU
+https://cdn.fs.teachablecdn.com/z2yqsFZQEjcQ7cYMKa7g
+https://cdn.fs.teachablecdn.com/QAdy9HLSrORaFBEohJtw
+https://cdn.fs.teachablecdn.com/T6pLvDOHSiJSCzTXzCtV
+https://cdn.fs.teachablecdn.com/QSuzVqL5QgGa8Vo4Bl0I`],
+[`https://cdn.fs.teachablecdn.com/RiX2sEyESBywgnl7dXLH`],
+[`https://cdn.fs.teachablecdn.com/sh3PhNVnTamYTPmUBdke
+https://cdn.fs.teachablecdn.com/WeTUMgSqQYq4xxZCKSqp
+https://cdn.fs.teachablecdn.com/xjk5jUY1Qc2HLFOHhZKm
+https://cdn.fs.teachablecdn.com/NvvhXeMeSFqG0KAeMVLe
+https://cdn.fs.teachablecdn.com/MOU0AuMDQf2CqoEUsDqw
+https://cdn.fs.teachablecdn.com/TcFE4FbyRmWUWU6Afepn
+https://cdn.fs.teachablecdn.com/n6cKurGBTyPgMnXxFmrw
+https://cdn.fs.teachablecdn.com/8qXsUMSsaxLcfdRaY6QZ
+https://cdn.fs.teachablecdn.com/i07iy24R3aZUTXiTLTkp
+https://cdn.fs.teachablecdn.com/DdVhFG9gTgOOWrrrw93S
+https://cdn.fs.teachablecdn.com/l6tte6FWSquTdRpeQbsW
+https://cdn.fs.teachablecdn.com/RJzKMkoTpmxBZIxOrmiQ
+https://cdn.fs.teachablecdn.com/EFm4jgN7RNaOFSW6selz
+https://cdn.fs.teachablecdn.com/E1DRoiyVTWGe8dcwGby4
+https://cdn.fs.teachablecdn.com/fXeMi03vSW3wFJ33U3QN
+https://cdn.fs.teachablecdn.com/fNwfxs6QcW2dbgRNhWHQ
+https://cdn.fs.teachablecdn.com/dPL3VVU4Q3yKQRnqYRWX
+https://cdn.fs.teachablecdn.com/1UnE4kqoTnac9F4BlrSZ
+https://cdn.fs.teachablecdn.com/rHXrHbRSUSBV8Hjvqojm
+https://cdn.fs.teachablecdn.com/Uy1luhgHSDq27QgSyaJi
+https://cdn.fs.teachablecdn.com/93OEQnjSVC09GeBhsRTu`],
+[`https://cdn.fs.teachablecdn.com/g5Yej9rrSlaWIifKQTO9
+https://cdn.fs.teachablecdn.com/qB3mljcOTYS60jxB9tfY
+https://cdn.fs.teachablecdn.com/JFj6uusFRWqW4WGcuGhY
+https://cdn.fs.teachablecdn.com/QQjEd9fPQAmpyOAqhj3o
+https://cdn.fs.teachablecdn.com/K7cBlojQGK2VqJr6r2Ri
+https://cdn.fs.teachablecdn.com/7QWuXsL9R7YDPCcdprsK
+https://cdn.fs.teachablecdn.com/9nYxmj3sTMqzU1qKzfJ8
+https://cdn.fs.teachablecdn.com/jm32G3SjUzt8GcVoM4Q1
+https://cdn.fs.teachablecdn.com/uwwWWVbTEWvW8AaGxQWu
+https://cdn.fs.teachablecdn.com/J7EF4ldGQ5evkxDn2OYF
+https://cdn.fs.teachablecdn.com/y7Yr4jxQTbinNLItv603
+https://cdn.fs.teachablecdn.com/ntQZxmj0QBSZE5UTSDd6
+https://cdn.fs.teachablecdn.com/x2NPBAM9SBG58tATl7cd
+https://cdn.fs.teachablecdn.com/JkNcWPZfRxmMhVyqh6DC
+https://cdn.fs.teachablecdn.com/MMpzdpguQICrqvKB2dvi`],
+[`https://cdn.fs.teachablecdn.com/ybD5peVST363FopTOBtu
+https://cdn.fs.teachablecdn.com/IC7cYJRvRoKtCqiD7UGJ
+https://cdn.fs.teachablecdn.com/u0TkMsIgSZe6x4hYZTWr
+https://cdn.fs.teachablecdn.com/ZvkjOv0RCifT4mOhWj2Q
+https://cdn.fs.teachablecdn.com/cacPKklESTCbVBRpl3rG
+https://cdn.fs.teachablecdn.com/idStuMaSRUimuUppXqwt
+https://cdn.fs.teachablecdn.com/tfUx3SCXQrGWEyXCiZZz
+https://cdn.fs.teachablecdn.com/yho5p38ZQhuZKv5OUIpG
+https://cdn.fs.teachablecdn.com/OlgJx4xTOuzGt8Who4Og
+https://cdn.fs.teachablecdn.com/0d39IdJvTpeE8ofD0xaY
+https://cdn.fs.teachablecdn.com/Bs2oxXceRdSdLqEQh784
+https://cdn.fs.teachablecdn.com/ZGGLDrElRq2286SlHqYc
+https://cdn.fs.teachablecdn.com/TedpsEqfTBuoXXj8GmWj
+https://cdn.fs.teachablecdn.com/uoJcKaKTVelaMHtXopOP
+https://cdn.fs.teachablecdn.com/aE3LEyleSHe0pSktHC87`],
+[`https://cdn.fs.teachablecdn.com/74UrKV8OR0WxNsZkTVZN
+https://cdn.fs.teachablecdn.com/4ZwMmGp1T96caVjJCA0I
+https://cdn.fs.teachablecdn.com/4nEAjJxS32qDy9WJ2aa8
+https://cdn.fs.teachablecdn.com/SHzd0muRfsdfXRGDYhXQ
+https://cdn.fs.teachablecdn.com/pZVVRNwQeyRmh2iuv0Ij
+https://cdn.fs.teachablecdn.com/gNwYL2wWTH6j4iu4y4Q3
+https://cdn.fs.teachablecdn.com/5TjXpbssQwSycPlmqYHt
+https://cdn.fs.teachablecdn.com/CT0P0tavQlWCKb2fZINZ
+https://cdn.fs.teachablecdn.com/wpw9OrLNQl25RpxnjdUG
+https://cdn.fs.teachablecdn.com/w8q2HGJTwyIytLGi6d3A
+https://cdn.fs.teachablecdn.com/ndJ68eAySVy8QyEwEnvA
+https://cdn.fs.teachablecdn.com/S9rN0ZHwQ9S3e1DGyuD6
+https://cdn.fs.teachablecdn.com/qBjFlbsLSuK0NtOuQ8DA
+https://cdn.fs.teachablecdn.com/dAmbzVgcQEaCFTRidK80`],
+[`https://cdn.fs.teachablecdn.com/ock9A1tZT8qNekinKQXR
+https://cdn.fs.teachablecdn.com/a0T3ej98S1K9dszUjLW3
+https://cdn.fs.teachablecdn.com/WhJNE8YXT5m2Va6z3mtn
+https://cdn.fs.teachablecdn.com/5IJnA6g5TXAeLhHPgG0i
+https://cdn.fs.teachablecdn.com/GjPL1vBYQuqP17HqUjgu
+https://cdn.fs.teachablecdn.com/qPtiW9WTiirw8K0Dw3x2
+https://cdn.fs.teachablecdn.com/5q5xWsxvSCihLLhQ2KBm
+https://cdn.fs.teachablecdn.com/ZwrOFjPSs6EtJcLSU0Lw
+https://cdn.fs.teachablecdn.com/AFMSCqpRbmPhF3AuVwag
+https://cdn.fs.teachablecdn.com/s8Z0S3CCQVCIExpGJvoX
+https://cdn.fs.teachablecdn.com/HRaUNjEQVOKIyE3v62xu
+https://cdn.fs.teachablecdn.com/JtxI6JMLTzCM6gMc9j74
+https://cdn.fs.teachablecdn.com/wTiVzeTT6m2xurmpJrTP
+https://cdn.fs.teachablecdn.com/mMy1lJwxS5Uz1QAdGhiC
+https://cdn.fs.teachablecdn.com/SkDFWGiS5lV0kJvxoCgS
+https://cdn.fs.teachablecdn.com/UMHqdcZRR8KeWBaaJiQX
+https://cdn.fs.teachablecdn.com/Liyy52VpSTaqAumCmo1Y
+https://cdn.fs.teachablecdn.com/oiz1vrMZTASylj5P8xP1
+https://cdn.fs.teachablecdn.com/y62YdCdbT0SwiUU9fdYh`],
+[`https://cdn.fs.teachablecdn.com/qr9qQSzkT6eDJixEILCO
+https://cdn.fs.teachablecdn.com/ZMId6DZR5CgRlR25SYI4
+https://cdn.fs.teachablecdn.com/DOLMuksfSC0bmS5dyTmk
+https://cdn.fs.teachablecdn.com/jLL8pjiUSTOq4Y71qBpT
+https://cdn.fs.teachablecdn.com/G6ZXzciQKu9m2ZGFFx24
+https://cdn.fs.teachablecdn.com/KLB5fsI3Q0G80xHISBfe
+https://cdn.fs.teachablecdn.com/plE7BBkpRmWFKqaBdS4w
+https://cdn.fs.teachablecdn.com/ntYDwLmRQCjDn7660q0o
+https://cdn.fs.teachablecdn.com/V3TWZDBS824FYE5HmdA6
+https://cdn.fs.teachablecdn.com/xZeedLMvS1uCnWTa3N0V
+https://cdn.fs.teachablecdn.com/Y2wdZU1HSyulhQriSQSQ
+https://cdn.fs.teachablecdn.com/Yg5GFiVWSbaOrAeBkFip
+https://cdn.fs.teachablecdn.com/hWhemKCfQaWqd37VQTBt
+https://cdn.fs.teachablecdn.com/PZ7XPKMRguoqbKxiMjdM`],
+[`https://cdn.fs.teachablecdn.com/iZTR3c4ASOqJRZNO0moe`],
+[`https://cdn.fs.teachablecdn.com/4PUntWtSQGCfhSzEvI33
+https://cdn.fs.teachablecdn.com/AK6OFScnRgWiAMHeKim2
+https://cdn.fs.teachablecdn.com/tPNW9kpDQ1erZPzhM0Ju
+https://cdn.fs.teachablecdn.com/P8k0QQCWTey1VQTNhHLH
+https://cdn.fs.teachablecdn.com/KDuZpJQBmCQAOTMhmwl1
+https://cdn.fs.teachablecdn.com/OvtqVmBSsOQmmXZupY6Y
+https://cdn.fs.teachablecdn.com/wNqZ6HcSHmxWEPecQJnS
+https://cdn.fs.teachablecdn.com/kmxWVpNYSemDH7ttFrks
+https://cdn.fs.teachablecdn.com/c17WGkTuicMlgGPQwc2w
+https://cdn.fs.teachablecdn.com/6kuyLCsITR6qLZg8IV4P
+https://cdn.fs.teachablecdn.com/rVb9nPS1ir8hJNENDYNA
+https://cdn.fs.teachablecdn.com/M9KNWq67TSCCX0PJmpZU
+https://cdn.fs.teachablecdn.com/r9ueR3ySza2hs8ZCNBpN
+https://cdn.fs.teachablecdn.com/CxIRctvaToKD5vDDfW61
+https://cdn.fs.teachablecdn.com/Yg03JdvAQPmSMmOzXvrR
+https://cdn.fs.teachablecdn.com/H1vfIWVKS6Gm2fBGKRHH`],
+[`https://cdn.fs.teachablecdn.com/9xevObazQmGuk0hU2NNw
+https://cdn.fs.teachablecdn.com/gGpe5E38RLuRbEqodb1g
+https://cdn.fs.teachablecdn.com/DKOn9djCRW63NepybCPK
+https://cdn.fs.teachablecdn.com/xW5CRdzQM67b4EYg6pMQ
+https://cdn.fs.teachablecdn.com/5J3qX3LwSRi1JfmSOH5u
+https://cdn.fs.teachablecdn.com/arebLaauRK6Argv0X5aw
+https://cdn.fs.teachablecdn.com/vLes9zlTNqYtNRHLDZcg
+https://cdn.fs.teachablecdn.com/Ly4i2DJ6SFyUmgnpp6UU
+https://cdn.fs.teachablecdn.com/xkBuDan9RxV5KV4uQUZ7
+https://cdn.fs.teachablecdn.com/YT96B4H5TKu8FLgAK1fH
+https://cdn.fs.teachablecdn.com/rYI76RmaTZ69E6LZplQc
+https://cdn.fs.teachablecdn.com/YCB3UYXSHCM7l61EzrjA`],
+[`https://cdn.fs.teachablecdn.com/q9p6r71bS8Oq6x0wATsV
+https://cdn.fs.teachablecdn.com/Zo2Xr08vT8yoyL5ilKEu
+https://cdn.fs.teachablecdn.com/TMu2qLRyQ4aLaOSbqVgI
+https://cdn.fs.teachablecdn.com/VSWhty6BSCW7KAobjM7M
+https://cdn.fs.teachablecdn.com/OFqA9ynVSAmq3TH7D5GM
+https://cdn.fs.teachablecdn.com/hjYq2QejQzWRvcgogV0Q
+https://cdn.fs.teachablecdn.com/6bvu2teGTqS4vboIVuQ0
+https://cdn.fs.teachablecdn.com/KoLOcP9dQQOPdsKdGlIA
+https://cdn.fs.teachablecdn.com/mla0xEYKSWGrauuqrNgK
+https://cdn.fs.teachablecdn.com/odwnLjX9SgWKR7l17Psc
+https://cdn.fs.teachablecdn.com/sHNmYQvRVKLjwgLEeOZL
+https://cdn.fs.teachablecdn.com/40jBkVZES264pweaKRCW`]]
 
       function videoHolders(courseName, courseHeadings){
         for(let courseHeading of courseHeadings){
@@ -254,16 +822,12 @@
         videoContainer.setAttribute("class", "courseParts");
         h2.innerText = courseHeading;
         videoContainer.append(h2);
-        typeScript.append(videoContainer);
+        courseName.append(videoContainer);
       }
       }
-
-      videoHolders(typeScript, typeScriptHeadings);
-
-      const videoHolder = document.querySelectorAll(".courseParts");
 
       // split link function start
-      function splitLinks(linkArray){
+      function splitLinks(linkArray, addTarget){
             for(let linkSets = 0; linkSets< linkArray.length; linkSets++){
             for (let link of linkArray[linkSets]){
             const linkSet = link.split("\n");
@@ -276,38 +840,27 @@
               video.setAttribute("src", `${linkSet[i]}`);
                 li.append(video);
                 ol.append(li);
-                videoHolder[linkSets].append(ol);
-                console.log(linkSet[i]);
+                addTarget[linkSets].append(ol);
             }
             }
             }
           }
       // split link function end
 
-      splitLinks(typeScriptVideoLinks);
+      videoHolders(typeScript, typeScriptHeadings);
+      videoHolders(SQL, SQLHeadings);
+      videoHolders(C_Sharp, C_SharpHeadings);
+      videoHolders(DSA, DSAHeadings);
 
-      // ============================================
+      const typeScriptVideoTarget = document.querySelectorAll("#TypeScript .courseParts");
+      const SQLVideoTarget = document.querySelectorAll("#SQL .courseParts");
+      const C_sharpVideoTarget = document.querySelectorAll("#C_Sharp .courseParts");
+      const DSAVideoTarget = document.querySelectorAll("#DSA .courseParts");
 
-      // function addVideos(arrayLinkSets){
-      //   for(let i = 0; i<=typeScriptVideoLinks.length; i++){
-      //     for(let arrayLinkSet of arrayLinkSets[i]){
-      //       const ol = document.createElement('ol');
-      //       for(let i = 0; i<=3;i++){
-      //         const li = document.createElement('li');
-      //         const video = document.createElement('video');
-      //         video.setAttribute("src", `${i}`);
-      //         li.append(video);
-      //         ol.append(li);
-      //       }
-      //     console.log(arrayLinkSet)
-      //     console.log(videoHolder[i])
-      //   }
-      //   }
-      // }
-
-      // addVideos(typeScriptVideoLinks);
-
-      // navigation links end
+      splitLinks(typeScriptVideoLinks, typeScriptVideoTarget);
+      splitLinks(SQLVideoLinks, SQLVideoTarget);
+      splitLinks(C_SharpVideoLinks, C_sharpVideoTarget);
+      splitLinks(DSAVideoLinks, DSAVideoTarget);
 
     </script>
   </body>
