@@ -262,41 +262,50 @@
 
       const videoHolder = document.querySelectorAll(".courseParts");
 
-      // function addVideos(arrayLinks){
+      // split link function start
+      function splitLinks(linkArray){
+            for(let linkSets = 0; linkSets< linkArray.length; linkSets++){
+            for (let link of linkArray[linkSets]){
+            const linkSet = link.split("\n");
+            const ol = document.createElement('ol')
+            for (let i=0; i<linkSet.length; i++){
+              const li = document.createElement('li');
+              const video = document.createElement('video');
+              video.setAttribute("controls","")
+              video.setAttribute("preload","none")
+              video.setAttribute("src", `${linkSet[i]}`);
+                li.append(video);
+                ol.append(li);
+                videoHolder[linkSets].append(ol);
+                console.log(linkSet[i]);
+            }
+            }
+            }
+          }
+      // split link function end
+
+      splitLinks(typeScriptVideoLinks);
+
+      // ============================================
+
+      // function addVideos(arrayLinkSets){
       //   for(let i = 0; i<=typeScriptVideoLinks.length; i++){
-      //     for(let arrayLink of arrayLinks[i]){
+      //     for(let arrayLinkSet of arrayLinkSets[i]){
       //       const ol = document.createElement('ol');
-      //       const li = document.createElement('li');
-      //       const video = document.createElement('video');
-      //       const videohold = videoHolder[i];
-      //       video.setAttribute("src", `${i}`);
-      //       li.append(video);
-      //       ol.append(li);
-      //       videohold.append(ol);
-      //     console.log(arrayLink)
+      //       for(let i = 0; i<=3;i++){
+      //         const li = document.createElement('li');
+      //         const video = document.createElement('video');
+      //         video.setAttribute("src", `${i}`);
+      //         li.append(video);
+      //         ol.append(li);
+      //       }
+      //     console.log(arrayLinkSet)
       //     console.log(videoHolder[i])
       //   }
       //   }
       // }
 
-      function addVideos(arrayLinks){
-        for(let i = 0; i<=typeScriptVideoLinks.length; i++){
-          for(let arrayLink of arrayLinks[i]){
-            const ol = document.createElement('ol');
-            for(let i = 0; i<= 3;i++){
-              const li = document.createElement('li');
-              const video = document.createElement('video');
-              video.setAttribute("src", `${i}`);
-              li.append(video);
-              ol.append(li);
-            }
-          console.log(arrayLink)
-          console.log(videoHolder[i])
-        }
-        }
-      }
-
-      addVideos(typeScriptVideoLinks);
+      // addVideos(typeScriptVideoLinks);
 
       // navigation links end
 
