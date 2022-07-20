@@ -50,13 +50,13 @@
       }
 
       h1{
-        color: white;
+        color: rgb(255, 0, 68);
         font-size: 4rem;
         margin: 20px 0;
       }
 
       h2 {
-        color: white;
+        color: rgb(0, 255, 183);
         font-size: 2.5rem;
         margin-bottom: 20px;
       }
@@ -87,7 +87,7 @@
         position: fixed;
         bottom: 0;
         right: 0;
-        background-color: red;
+        background-color: rgb(255, 255, 255);
         width: 50px;
         height: 50px;
         margin: 10px;
@@ -815,6 +815,90 @@ https://cdn.fs.teachablecdn.com/odwnLjX9SgWKR7l17Psc
 https://cdn.fs.teachablecdn.com/sHNmYQvRVKLjwgLEeOZL
 https://cdn.fs.teachablecdn.com/40jBkVZES264pweaKRCW`]]
 
+      const Docker = document.querySelector("#Docker");
+      const DockerHeadings = ['Getting Started (3m)', 'Introduction to Docker (25m)', 'The Linux Command Line (65m)', 'Building Images (65m)', 'Working with Containers (30m)', 'Running Multi-container Applications (50m)', 'Deploying Applications (30m)'];
+      const DockerVideoLinks = [[``],
+      [`https://cdn.fs.teachablecdn.com/DysxXJtUQKttqAtf0yRt
+https://cdn.fs.teachablecdn.com/5VNxaZX7TCOvTdNNfxoZ
+https://cdn.fs.teachablecdn.com/JAZdiwfQp6Wj8GJRbg5Q`],
+      [`https://cdn.fs.teachablecdn.com/DDrvghHCThOe7EiFb7Th
+https://cdn.fs.teachablecdn.com/jeK12axNTZ6KUI8VroUt
+https://cdn.fs.teachablecdn.com/qrjrHonyTLfb5PHfxz4T
+https://cdn.fs.teachablecdn.com/Uz99PIlWQUic4mK1UAX4
+https://cdn.fs.teachablecdn.com/HCGpPZ9aQxOUvidn5ux2
+https://cdn.fs.teachablecdn.com/XG3VVHKbS7e2VcbChgDL
+https://cdn.fs.teachablecdn.com/x1OMdJT7RA2JyZCZSvxO`],
+      [`https://cdn.fs.teachablecdn.com/J834BRiecaXaH401aQQY
+https://cdn.fs.teachablecdn.com/pNSjSnQLS0mviN8N6UxJ
+https://cdn.fs.teachablecdn.com/kui2siIDSnqYUNMABXxI
+https://cdn.fs.teachablecdn.com/aeUlEhpsQqeuZVsZU0Iy
+https://cdn.fs.teachablecdn.com/AcQVVBWQR8qIYW31PBeB
+https://cdn.fs.teachablecdn.com/PZvOvSwRTzK9F3Y6aA3e
+https://cdn.fs.teachablecdn.com/6nbvQJHtQo2GTs8UPdBQ
+https://cdn.fs.teachablecdn.com/H7mC0r8ZSPS5f5lQBqZt
+https://cdn.fs.teachablecdn.com/jK86LYsQfy0KdqoOwFOm
+https://cdn.fs.teachablecdn.com/7KrHu8arRvAg9ZM36wwm
+https://cdn.fs.teachablecdn.com/NYtiUTb1RGCHZUyHexHN
+https://cdn.fs.teachablecdn.com/CUl7xiDSvmNtM6NJ130K
+https://cdn.fs.teachablecdn.com/ucmbpNDqQEaSUOn4NlLW
+https://cdn.fs.teachablecdn.com/G7ppJ8LSxCRNBezkmqzQ
+https://cdn.fs.teachablecdn.com/j8TJ6MrSpiXQ65skiprl
+https://cdn.fs.teachablecdn.com/eR1kD3RwQ46DQgDaBmjJ
+https://cdn.fs.teachablecdn.com/6bQxEioeRdaq3Pvv3DvS`],
+      [`https://cdn.fs.teachablecdn.com/frfRxpadT5CbPG9B6xVs
+https://cdn.fs.teachablecdn.com/Ghc3VWvFSWGOkPpbTafw
+https://cdn.fs.teachablecdn.com/ztysI2RcTOSCmtEgu3v1
+https://cdn.fs.teachablecdn.com/bMXP7EP2Tz2nYjm77o9P
+https://cdn.fs.teachablecdn.com/GwRGw0S8vbJiv9tD8Fw1
+https://cdn.fs.teachablecdn.com/P5mHEZD3RNeuPzuZflY9
+https://cdn.fs.teachablecdn.com/VfG269LRTKeysE5mJPhW
+https://cdn.fs.teachablecdn.com/HGD0FD9QdeI5cIezWi62
+https://cdn.fs.teachablecdn.com/A5wGszWTS9Sk3B6Y77Sy
+https://cdn.fs.teachablecdn.com/171VIitURImMDVv1wT7G
+https://cdn.fs.teachablecdn.com/t4qjYqRR9ehwfUSbIzfS
+https://cdn.fs.teachablecdn.com/BXdl86uRP6PLSGgPUpR0
+https://cdn.fs.teachablecdn.com/XSqarJsJSMSLmaSgfwPt
+https://cdn.fs.teachablecdn.com/sQ91bANRRWSsjTVx3FaD
+https://cdn.fs.teachablecdn.com/lNo0G5GlQhy1YfwE9wzT
+https://cdn.fs.teachablecdn.com/xAo4HiPoTCiHkQLEpDVP
+https://cdn.fs.teachablecdn.com/YuvQpEITSLyVYaiZ3Y88`],
+      [`https://cdn.fs.teachablecdn.com/vy7qriUBTGKoYK6q5dwG
+https://cdn.fs.teachablecdn.com/oEvQPWR32xWZnE0yMmwU
+https://cdn.fs.teachablecdn.com/Cpuksi48RnakWkbIMu2h
+https://cdn.fs.teachablecdn.com/eBSMDQdgQlmKy93kZK51
+https://cdn.fs.teachablecdn.com/IOpD7FN1TYu7GF5lNZGU
+https://cdn.fs.teachablecdn.com/uHkAklLwQu7h4XsWGV0Q
+https://cdn.fs.teachablecdn.com/O07l43VTdu82HfzfnLkG
+https://cdn.fs.teachablecdn.com/GnPDTut0SRm7PhCWiLB3
+https://cdn.fs.teachablecdn.com/Dtv1NRa5QvCc6bXVISsx
+https://cdn.fs.teachablecdn.com/86WrFu8rRdyufHGCHH0f
+https://cdn.fs.teachablecdn.com/V2qttZIrR6ycdTd6S4BN`],
+      [`https://cdn.fs.teachablecdn.com/n0Q7fVv6R0CBPVTyM9yO
+https://cdn.fs.teachablecdn.com/dDFkfUN7TyKRLChQXuvm
+https://cdn.fs.teachablecdn.com/zp0JLF5ZT3ycdj3CijVI
+https://cdn.fs.teachablecdn.com/tvhAOkVyTyiRDaRXvxDA
+https://cdn.fs.teachablecdn.com/KHSKcpURxiIR5i6Eunbn
+https://cdn.fs.teachablecdn.com/l8atjm6tS2yZFif7mmR8
+https://cdn.fs.teachablecdn.com/Nnp4nQ7AQo62M5EdPOOw
+https://cdn.fs.teachablecdn.com/bWYYrSQMRg2de4m2nr7A
+https://cdn.fs.teachablecdn.com/JHWRaMDVTgWEaHZ6y1Ix
+https://cdn.fs.teachablecdn.com/xS1VSplRviNeqgcbvQNG
+https://cdn.fs.teachablecdn.com/Cztvo5ihQ3qRK6VAxCrS
+https://cdn.fs.teachablecdn.com/bPlqQUo6TL67hQaYbSu6
+https://cdn.fs.teachablecdn.com/6pQA6wFBRo2x5iHmC94B
+https://cdn.fs.teachablecdn.com/d2Kx5mAOTEeS1Uop5YUf`],
+      [`https://cdn.fs.teachablecdn.com/L2iTLvJAQmC4f2YfkmIR
+https://cdn.fs.teachablecdn.com/mEhppus6SWywcwLkYzXA
+https://cdn.fs.teachablecdn.com/2YSu9RX0QcCpiPylCAOv
+https://cdn.fs.teachablecdn.com/OYtMGkcOQCmIe4Pyvgqc
+https://cdn.fs.teachablecdn.com/Hx3bSaMSWV2C3EU35Vpg
+https://cdn.fs.teachablecdn.com/ByoKXcMHSyaklsDtJ5MM
+https://cdn.fs.teachablecdn.com/DV5ekAtQ6i5623xfz2Vg
+https://cdn.fs.teachablecdn.com/4oBweUQKuL0bpbz7HLQY
+https://cdn.fs.teachablecdn.com/P31eU5qNQuSPCKdsDI7Y
+https://cdn.fs.teachablecdn.com/i8QJi3z4SE2iuCs9xJUG
+https://cdn.fs.teachablecdn.com/V2Yy9ClQRA6u0KMmwmAA`]];
+
       function videoHolders(courseName, courseHeadings){
         for(let courseHeading of courseHeadings){
         const h2 = document.createElement('h2');
@@ -851,16 +935,19 @@ https://cdn.fs.teachablecdn.com/40jBkVZES264pweaKRCW`]]
       videoHolders(SQL, SQLHeadings);
       videoHolders(C_Sharp, C_SharpHeadings);
       videoHolders(DSA, DSAHeadings);
+      videoHolders(Docker, DockerHeadings);
 
       const typeScriptVideoTarget = document.querySelectorAll("#TypeScript .courseParts");
       const SQLVideoTarget = document.querySelectorAll("#SQL .courseParts");
       const C_sharpVideoTarget = document.querySelectorAll("#C_Sharp .courseParts");
       const DSAVideoTarget = document.querySelectorAll("#DSA .courseParts");
+      const DockerVideoTarget = document.querySelectorAll("#Docker .courseParts");
 
       splitLinks(typeScriptVideoLinks, typeScriptVideoTarget);
       splitLinks(SQLVideoLinks, SQLVideoTarget);
       splitLinks(C_SharpVideoLinks, C_sharpVideoTarget);
       splitLinks(DSAVideoLinks, DSAVideoTarget);
+      splitLinks(DockerVideoLinks, DockerVideoTarget);
 
     </script>
   </body>
